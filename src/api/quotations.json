@@ -1,0 +1,485 @@
+{
+  "quote":
+  {
+    "vSel1": {
+      "newUsed": "New",
+      "carType": "Passenger",
+      "carManufacturer": "Chevrolet",
+      "carModel": "",
+      "carVarient": "",
+      "carModel": "",
+      "price": ""
+    },
+    "vSel2":  {
+      "currentPlan":
+      {
+        "type": "SUBSIDIZED PLAN",
+        "totalDeposit": "30%",
+        "monthlyPayment": "546.82",
+        "term": "48"
+      },
+      "plans": [
+        {
+          "type": "REGULAR PLAN",
+          "totalDeposit": "30%",
+          "monthlyPayment": "546.82",
+          "term": "48"
+        },
+        {
+          "type": "SUBSIDIZED PLAN",
+          "totalDeposit": "30%",
+          "monthlyPayment": "546.82",
+          "term": "48"
+        },
+        {
+          "type": "SMARTBUY PLAN",
+          "totalDeposit": "30%",
+          "monthlyPayment": "546.82",
+          "term": "48"
+        },
+        {
+          "type": "PREMIUM PLAN",
+          "totalDeposit": "30%",
+          "monthlyPayment": "546.82",
+          "term": "48"
+        }
+
+      ]
+    },
+    "vSel3":   {
+      "status":"Pre-Approved",
+      "result": [
+        {
+          "entity": "Monthly Regular Payment:",
+          "value": "$ 10,000"
+        },
+        {
+          "entity": "Expected Maximum Monthly Payment:",
+          "value": "$ 11,000"
+        },
+
+        {
+          "entity": "Monthly Regular Rent:",
+          "value": "1.5%"
+        },
+
+        {
+          "entity": "First Payment Date:",
+          "value": "9/12/2017"
+        },
+
+        {
+          "entity": "Customer rate:",
+          "value": "12%"
+        },
+
+        {
+          "entity": "CAT:",
+          "value": "13%"
+        },
+
+        {
+          "entity": "Subsidy - Percentage:",
+          "value": "0%"
+        }
+
+      ],
+      "otherTerms": [
+        {
+          "entity": "12",
+          "value": "$ 325,838"
+        },
+        {
+          "entity": "24",
+          "value": "$ 325,838"
+        },
+        {
+          "entity": "48",
+          "value": "$ 325,838"
+        },
+        {
+          "entity": "60",
+          "value": "$ 325,838"
+        },
+        {
+          "entity": "72",
+          "value": "$ 325,838"
+        }
+
+      ],
+      "date": "11/09/2017",
+      "custType": "Persona Física",
+      "isNew": true,
+      "modelYear": "2014",
+      "make": "Chevrolet",
+      "carModel": "Cruze",
+      "isAllModel": true,
+      "sellingPrice": "19,350",
+      "term": "24",
+      "planDetails": "Employes HB LT",
+      "plans": "HB LT AC 2.0D",
+      "isAllPlans": true,
+      "category": "Package B",
+      "verhicleUsage": "Passengers",
+      "isFixedRate": true,
+      "withResource": true,
+      "isFleet": true
+    }
+  },
+    "vap":{ "allItems": [
+      {
+        "type": "carInsurance",
+        "label": "Car Insurance",
+        "isRequired": true,
+        "isChkDisabled": true,
+        "typeValue": "Qualitas",
+        "amount": "120,343",
+        "isFinanced": true
+      },
+      {
+        "type": "lifeInsurance",
+        "label": "Life Insurance ($)",
+        "isChkDisabled": true,
+        "typeValue": "Metlife",
+        "amount": "120,343"
+      },
+      {
+        "type": "unemployedInsurance",
+        "label": "Unemployed Insurance",
+        "isChkDisabled": true,
+        "typeValue": "Metlife",
+        "amount": "120,343",
+        "isFinanced": true
+      },
+      {
+        "type": "fee",
+        "label": "Fee (when it´s not direct debit)",
+        "isRequired": true,
+        "typeValue": "",
+        "amount": "120,343",
+        "isFinanced": true
+      },
+      {
+        "type": "gap",
+        "label": "GAP",
+        "typeValue": "BNP Paribas",
+        "amount": "120,343",
+        "isFinanced": true
+      },
+      {
+        "type": "warranty",
+        "label": "Extended Warranty",
+        "isSelected": true,
+        "isRequired": true,
+        "typeValue": "ABA",
+        "amount": "120,343",
+        "isFinanced": true
+      },
+      {
+        "type": "partsAndAccessories",
+        "label": "Parts and Accessories",
+        "isRequired": true,
+        "typeValue": "",
+        "amount": "120,343",
+        "isFinanced": true
+      },
+      {
+        "type": "onStar",
+        "label": "OnStar",
+        "isRequired": true,
+        "typeValue": "",
+        "amount": "120,343",
+        "isFinanced": true
+      },
+      {
+        "type": "oterAmount",
+        "label": "Other amount",
+        "isRequired": true,
+        "amount": "120,343",
+        "isFinanced": true
+      },
+      {
+        "type": "openingFee",
+        "label": "Opening Fee",
+        "isRequired": true,
+        "amount": "120,343",
+        "isFinanced": true
+      }
+    ],
+    "totalFinanced": "120,343",
+    "totalNonFinanced": "120,343",
+    "securityDeposit": "120,000",
+    "extPayment": "60,000",
+    "resiudualValue": "43,000",
+    "extPayment1Val": "120,000",
+    "extPayment1Percent": "Plan 1",
+    "securityValue": "Plan 1",
+    "results":{
+      "securityDepositQty":"$ 10,000",
+      "expectedMaxMonthlyPayment":"$ 11,000",
+      "monthlyRegRent":"1.5%",
+      "firstPaymentDate":"1.5%",
+      "custRate":"12%",
+      "cat":"13%",
+      "subsidyPercent":"0%"
+    }
+  },
+  "quotationApplicant": {
+    "name":"Reid Hoffman",
+    "applicationId":"#13389043",
+    "status": "Pre Approval",
+    "basicDetails": "Car: Chevrolet - Cruze - HB LT AC 2.0D",
+    "moreDetails": "CSP: $ 180,000 - DP: $ 30,000 - Term: 36 Mon - Monthly Payment $ 2,450 - Total Amunt: 120,343"
+  },
+  "personalData":{
+    "firstName":"Juan",
+    "middleName":"Martin",
+    "fathersName": "Perez",
+    "mothersName": "Lopez",
+
+    "isLastName2":"No",
+    "dirthDate":"01/Jan/2000",
+    "taxId":"LOJM-800101-TY0",
+    "birthCountry":"Mexico",
+    "birthState":"Nuevo Leon",
+    "subCustomer":"Private Individual with enterprise...",
+    "nationality":"Extranjero",
+    "nationalityDetails":"Colombiano",
+    "email":"juan@gmail.com",
+    "gender":"Male",
+    "noOfDependants":"",
+    "idNumber":"LOJM800101MXMTYNL05142",
+    "maritalStatus":"Married",
+    "isSpouseOtherApplicant":"Co-Applicant",
+    "isSppuseContributes": "No",
+    "foreignId":"G78926541",
+    "customerIndetifier":"New",
+    "subProgramIdentifier":"Select"
+
+  },
+  "spouseData": {
+    "firstName":"Maria",
+    "middleName":"De los Angeles",
+    "fathersName": "Salazar",
+    "mothersName": "Valle",
+
+    "isLastName2":"No",
+    "dirthDate":"01/Dec/1986",
+    "taxId":"SAMD-861201-N87",
+    "birthCountry":"Mexico",
+    "birthState":"Nuevo Leon",
+    "subCustomer":"Private Individual with enterprise...",
+    "nationality":"Mexicana",
+    "nationalityDetails":"Colombiano",
+    "email":"maria@hotmail.com",
+    "gender":"Female",
+    "idNumber":"SAMD861201MTYNL675",
+    "snoElectronicSignature":"",
+    "isSpouseOtheBeneficiary":"Yes",
+    "foreignId":"G78926541",
+    "customerIndetifier":"New",
+    "subProgramIdentifier":"Select",
+    "error":[
+      {"msg":"Please input your customer details below!"},
+      {"msg":"Main applicant needs to have more than 18 years old"}
+    ]
+  },
+  "customerAddress": {
+    "street": "Eugenio Garza Sada",
+    "ext": "933",
+    "int": "",
+    "neighborhood": "San Pedro Garza Garcia",
+    "state": "Nuevo Leon",
+    "townName": "Monterrey",
+    "city": "Monterrey",
+    "postalCode": "67100",
+    "residenceType": "Own",
+    "permanenceYears": "0",
+    "permanenceMonths": "10",
+    "monthlyPayment": "",
+    "value": "",
+    "telephoneAreaCode": "8",
+    "telephone": "81300000",
+    "cellphoneCode": "81",
+    "cellphone": "89630000"
+  },
+  "previousAddress": {
+    "street": "Fake Street",
+    "ext": "123",
+    "int": "",
+    "postalCode": "67100",
+    "state": "Nuevo Leon",
+    "city": "Monterrey",
+    "neighborhood": "Las brisas",
+    "seniorityYears": "4",
+    "seniorityMonths": "0"
+  },
+  "emp":{
+    "oaf":"Employee",
+    "pro":"Doctor or Medic",
+    "ocu":"Professional",
+    "oth":"",
+    "act":"Medical Services",
+    "com":"Zanitas",
+    "cou":"Mexico",
+    "sta":"Nuevo Leon",
+    "pro":"Monterrey",
+    "cit":"Monterrey",
+    "nei":"Valle",
+    "pos":"67100",
+    "str":"Eugenio Garza Sada",
+    "ext":"9300",
+    "int":"",
+    "tac":"8",
+    "tel":"81002500",
+    "ext2":"1542",
+    "sey":"0",
+    "sem":"8",
+    "toc":"Permanent Full Time",
+    "moi":"10,000",
+    "ami":"5,000",
+    "aid":"Christmas Bonus"
+  },
+  "pEmp":{
+    "com":"Zucaritas de Kellogs",
+    "pac":"8",
+    "pnl":"81520000",
+    "pn2":"8547"
+  },
+  "sEmp":{
+    "oof":"Housekeeper",
+    "pro":"Cheff",
+    "act":"Other Services",
+    "occ":"House"
+  },
+  "pref1":{
+    "name":"Jose Lopez",
+    "pac":"8",
+    "pnum":"84579621"
+  },
+  "pref2":{
+    "name":"Irma Lopez",
+    "pac":"8",
+    "pnum":"80009621"
+  },
+  "pref3":{
+    "name":"Catalina Lopez",
+    "pac":"8",
+    "pnum":"84579600"
+  },
+  "pep": {
+    "qa":{
+      "a1":"Yes",
+      "a2":"Yes",
+      "a3":"Yes",
+      "a4":"Yes"
+    },
+    "detailTitle":"Florida State Government",
+    "relName":"Lucia Lopez",
+    "relationship":"Mother",
+    "occupation":"Doctor",
+    "addr":"Fake Street 123",
+    "pho":"881234500",
+    "nei":"Orlando",
+    "city":"Florida",
+    "isResideInMexico":true,
+    "country":"United states"
+    
+  },
+  "docReq":[
+    {
+      "name":"Bank record"
+    },
+    {
+      "name":"Bank record",
+      "status":"Pending",
+      "doc":"Phone document.pdf"
+    },
+    {
+      "name":"ID Card Photo",
+      "status":"Approved",
+      "doc":"ID Card Photo.jpg",
+      "id":"ID Card Docment Validate"
+    },
+    {
+      "name":"Invoice document 1",
+      "status":"Rejected",
+      "doc":"Phone document.pdf",
+      "id":"Illegible document"
+    }
+  ],
+
+  "contractPrinting":[
+    {
+      "name":"Closing",
+      "status":"Approved",
+      "doc":"ID Card Photo.jpg",
+      "id":"ID Card Docment Validate"
+    },
+    {
+      "name":"Secure policy",
+      "status":"Pending",
+      "doc":"Phone document.pdf"
+    },
+    {
+      "name":"Vehicle release letter",
+      "status":"Approved",
+      "doc":"internet_receipt.jpg",
+      "id":"internet_receipt"
+    },
+    {
+      "name":"Contract",
+      "status":"Rejected",
+      "doc":"Invoice document.pdf",
+      "id":"Illegible document"
+    },
+    {
+      "name":"Bill",
+      "status":"Approved",
+      "doc":"internet_receipt.jpg",
+      "id":"internet_receipt"
+    }
+  ],
+  "doc":{
+    "cla":"12345678901327896",
+    "date":"12/1/2017",
+    "vinNo":"12345678901327896",
+    "engingeNo":"a12324",
+    "bodyWork":"1TU69 - M AVEO 4 PTAS M",
+    "plm":"M",
+    "sp":"Monterrey",
+    "ven":"Adrian Garza",
+    "cont":"9300",
+    "gap":"",
+    "udm": "Yes",
+    "refBy":"GMF ONE",
+    "comments":"Application is ready to start the validation of the documents attached and complete next steps to be purchased"
+  },
+  "history":[
+    {
+      "date":"24-6-2016 - 11:30",
+      "status":"Purchased",
+      "comments":"",
+      "modifiedBy":"Francisco Perez"
+    },
+    {
+      "date":"24-6-2016 - 11:30",
+      "status":"Held Offering",
+      "comments":"Vin number is incorrect please review and send again",
+      "modifiedBy":"Francisco Perez"
+    },
+    {
+      "date":"24-6-2016 - 11:30",
+      "status":"Submitted to Payout",
+      "comments":"",
+      "modifiedBy":"Francisco Perez"
+    },
+    {
+      "date":"24-6-2016 - 11:30",
+      "status":"Submit to Credit Decision",
+      "comments":"A new Co-applicant has been added to the application please review it",
+      "modifiedBy":"Francisco Perez"
+    }
+  ]
+
+}

@@ -1,0 +1,176 @@
+{
+  "searchList":[
+    {"label": "Customer Name", "value": "Customer Name", "isDefault":true},
+    {"label": "Proposal Number", "value": "Proposal Number"},
+    {"label": "Licences Plate", "value": "Licences Plate"}
+  ],
+  "carType":[
+    {"label": "Passenger", "value": "Passenger"},
+    {"label": "SUV", "value": "SUV"},
+    {"label": "Sedan", "value": "Sedan"}
+  ],
+  "verhicleUsage":[
+    {"label": "Passengers", "value": "Passengers"},
+    {"label": "SUV", "value": "SUV"},
+    {"label": "Sedan", "value": "Sedan"}
+  ],
+  "planDetails":[
+    {"label": "Employes HB LT", "value": "Employes HB LT"},
+    {"label": "Employes XA CC", "value": "Employes XA CC"},
+    {"label": "Employes GT CC", "value": "Employes GT CC"}
+  ],
+  "oaf":[
+    {"label": "Employes", "value": "Employes"},
+    {"label": "Employes XA CC", "value": "Employes XA CC"},
+    {"label": "Employes GT CC", "value": "Employes GT CC"}
+  ],
+  "doc":[
+    {"label": "Doctor or Medic", "value": "Doctor or Medic"},
+    {"label": "v1", "value": "v1"},
+    {"label": "v2", "value": "v2"}
+  ],
+  "neighborhood":[
+    {"label": "Valle", "value": "Valle"},
+    {"label": "v1", "value": "v1"},
+    {"label": "v2", "value": "v2"}
+  ],
+  "act":[
+    {"label": "Medical Services", "value": "Medical Services"},
+    {"label": "v1", "value": "v1"},
+    {"label": "v2", "value": "v2"}
+  ],
+  "carManufacturer":[
+    {"label": "Chevrolet", "value": "Chevrolet"},
+    {"label": "BMW", "value": "BMW"},
+    {"label": "Tesla", "value": "Tesla"}
+  ],
+  "subCustomer":[
+    {"label": "Private Individual with enterprise...", "value": "Private Individual with enterprise..."},
+    {"label": "customer 2", "value": "customer 2"},
+    {"label": "customer 3", "value": "customer 3"}
+  ],
+  "birthState":[
+    {"label": "Nuevo Leon", "value": "Nuevo Leon"},
+    {"label": "Nuevo Leon 2", "value": "Nuevo Leon 2"},
+    {"label": "Nuevo Leon 3", "value": "Nuevo Leon 3"}
+  ],
+  "state":[
+    {"label": "Nuevo Leon", "value": "Nuevo Leon"},
+    {"label": "Monterrey", "value": "Monterrey"},
+    {"label": "Nuevo Leon 3", "value": "Nuevo Leon 3"}
+  ],
+  "toc":[
+    {"label": "Permanent Full Time", "value": "Permanent Full Time"},
+    {"label": "Monterrey", "value": "Monterrey"},
+    {"label": "Nuevo Leon 3", "value": "Nuevo Leon 3"}
+  ],
+  "act2":[
+    {"label": "Other Services", "value": "Other Services"},
+    {"label": "Monterrey", "value": "Monterrey"},
+    {"label": "Nuevo Leon 3", "value": "Nuevo Leon 3"}
+  ],
+  "occ":[
+    {"label": "House", "value": "House"},
+    {"label": "Monterrey", "value": "Monterrey"},
+    {"label": "Nuevo Leon 3", "value": "Nuevo Leon 3"}
+  ],
+  "oof":[
+    {"label": "Housekeeper", "value": "Housekeeper"},
+    {"label": "Monterrey", "value": "Monterrey"},
+    {"label": "Nuevo Leon 3", "value": "Nuevo Leon 3"}
+  ],
+  "town":[
+    {"label": "Las brisas", "value": "Las brisas"},
+    {"label": "Nuevo Leon", "value": "Nuevo Leon"},
+    {"label": "Monterrey", "value": "Monterrey"},
+    {"label": "Nuevo Leon 3", "value": "Nuevo Leon 3"}
+  ],
+  "birthCountry":[
+    {"label": "Mexico", "value": "Mexico"},
+    {"label": "France", "value": "France"}
+  ],
+  "country":[
+    {"label": "Mexico", "value": "Mexico"},
+    {"label": "United states", "value": "United states"},
+    {"label": "France", "value": "France"}
+  ],
+  "yesNo":[
+    {"label": "Yes", "value": "Yes"},
+    {"label": "No", "value": "No"}
+  ],
+  "residenceType":[
+    {"label": "Own", "value": "Own"},
+    {"label": "Rented", "value": "Rented"}
+  ],
+  "carManufacturer":[
+    {"label": "Chevrolet", "value": "Chevrolet"},
+    {"label": "BMW", "value": "BMW"},
+    {"label": "Tesla", "value": "Tesla"}
+  ],
+  "make":[
+    {"label": "Chevrolet", "value": "Chevrolet"},
+    {"label": "BMW", "value": "BMW"},
+    {"label": "Tesla", "value": "Tesla"}
+  ],
+  "carModel":[
+    {"label": "Cruze", "value": "Cruze"},
+    {"label": "Model 22", "value": "Model 22"},
+    {"label": "Model S", "value": "Model S"}
+  ],
+  "carVarient":[
+    {"label": "A7xi73", "value": "A7xi73"},
+    {"label": "Model 22", "value": "Model 22"},
+    {"label": "Model S", "value": "Model S"}
+  ],
+  "carPrice":[
+    {"label": "20,750", "value": "20,750"},
+    {"label": "20,750", "value": "20,150"},
+    {"label": "20,750", "value": "20,790"}
+  ],
+  "date":[
+    {"label": "11 / 09 / 2017", "value": "11 / 09 / 2017"},
+    {"label": "22 / 09 / 2017", "value": "22 / 09 / 2017"},
+    {"label": "24 / 09 / 2017", "value": "24 / 09 / 2017"}
+  ],
+  "custType":[
+    {"label": "Persona Física", "value": "Persona Física"},
+    {"label": "Persona Física 1", "value": "Persona Física 1"},
+    {"label": "Persona Física 2", "value": "Persona Física 2"}
+  ],
+  "customerIndetifier":[
+    {"label": "New", "value": "New"},
+    {"label": "Old", "value": "Old"}
+  ],
+  "subProgramIdentifier":[
+    {"label": "Supplier 1", "value": "Supplier 1"},
+    {"label": "Supplier 2", "value": "Supplier 2"}
+  ],
+  "isSpouseOtherApplicant":[
+    {"label": "Co-Applicant", "value": "Co-Applicant"},
+    {"label": "Applicant", "value": "Applicant"}
+  ],
+  "nationality":[
+    {"label": "Extranjero", "value": "Extranjero"},
+    {"label": "Extranjero 2", "value": "Extranjero 2"}
+  ],
+  "maritalStatus":[
+    {"label": "Married", "value": "Married"},
+    {"label": "Un-Married", "value": "Un-Married"}
+  ],
+  "accType":[
+    {"label": "Acc Type1", "value": "Acc Type1"},
+    {"label": "Acc Type 2", "value": "Acc Type 2"}
+  ],
+  "bank":[
+    {"label": "Bank 1", "value": "Bank 1"},
+    {"label": "Bank  2", "value": "Bank  2"}
+  ],
+  "modelYear":[
+    {"label": "2013", "value": "2013"},
+    {"label": "2014", "value": "2014"},
+    {"label": "2015", "value": "2015"},
+    {"label": "2016", "value": "2016"},
+    {"label": "2017", "value": "2017"}
+  ]
+
+}

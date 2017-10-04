@@ -1,0 +1,182 @@
+<app-applicant-nav [activeNav] = "'personalPref'"></app-applicant-nav>
+
+<div class="tab-body-con">
+  <div class="modify-sn" *ngIf="!!state.dataLoaded && !!state.lookupLoaded">
+    <div class="detailed-quotation liquid">
+      <form class="form-modify">
+
+      <div class="expandable-sn">
+        <header>
+          <h3><a class="toggle-handle arrow"></a> <span>Personal References 1</span></h3>
+        </header>
+        <div class="wrapper-expcon">
+          <div class="con-sn">
+            <div class="col">
+              <div class="gr">
+                <h6>Name</h6>
+                <div class="val">
+                  <input type="text" class="input-ctrl"  name="name" [(ngModel)]="pref1.name" />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="gr">
+                <h6>Phone  - Area Code</h6>
+                <div class="val">
+                  <input type="text" class="input-ctrl"  name="pac" [(ngModel)]="pref1.pac" />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="gr">
+                <h6>Phone  - Number</h6>
+                <div class="val">
+                  <input type="text" class="input-ctrl"  name="pnum" [(ngModel)]="pref1.pnum" />
+                </div>
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+          <!-- /.con-sn -->
+        </div>
+        <!-- /.wrapper-expcon -->
+      </div>
+        <!-- /.expandable-sn -->
+
+      <div class="expandable-sn  spacing-t">
+              <header>
+                <h3><a class="toggle-handle arrow"></a> <span>Personal References 2</span></h3>
+              </header>
+              <div class="wrapper-expcon">
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Name</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="name2" [(ngModel)]="pref2.name" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Phone  - Area Code</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="pac2" [(ngModel)]="pref2.pac" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Phone  - Number</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="pnum2" [(ngModel)]="pref2.pnum" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col"></div>
+                </div>
+              </div>
+              <!-- /.wrapper-expcon -->
+      </div>
+        <!-- /.expandable-sn -->
+
+      <div class="expandable-sn  spacing-t">
+              <header>
+                <h3><a class="toggle-handle arrow"></a> <span>Personal References 3</span></h3>
+              </header>
+              <div class="wrapper-expcon">
+                <div class="con-sn">
+                            <div class="col">
+                              <div class="gr">
+                                <h6>Name</h6>
+                                <div class="val">
+                                  <input type="text" class="input-ctrl"  name="name3" [(ngModel)]="pref3.name" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="gr">
+                                <h6>Phone  - Area Code</h6>
+                                <div class="val">
+                                  <input type="text" class="input-ctrl"  name="pac3" [(ngModel)]="pref3.pac" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="gr">
+                                <h6>Phone  - Number</h6>
+                                <div class="val">
+                                  <input type="text" class="input-ctrl"  name="pnum3" [(ngModel)]="pref3.pnum" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col"></div>
+                          </div>
+                <!-- /.con-sn -->
+              </div>
+              <!-- /.wrapper-expcon -->
+      </div>
+        <!-- /.expandable-sn -->
+      
+      </form>
+      <!-- /.form-modify -->
+      <!-- /.form-modify -->
+    </div>
+    <!-- /.detailed-quotation -->
+    <div class="actions footer-actions spacing-b">
+      <div class="grouped-btns lt">
+      <a class="btn prev" routerLink="../workDetails" >Previous <i></i></a>
+      <a class="btn next" routerLink="../pep" >Next <i></i></a>
+      </div>
+      <div class="grouped-btns rt">
+        <a class="btn btn-secondary">Save updates</a>
+       <a class="btn btn-secondary off-readonly" (click)="showWarningModal(true)">Edit / Cancel</a>
+       <a class="btn btn-secondary on-readonly" routerLink="/quotationApplicant/general">Edit / Cancel</a>
+        <a class="btn btn-secondary">Copy</a>
+        <a class="btn btn-secondary"  (click)="showSubmitModal(true)">Submit</a>
+        <a class="btn btn-secondary disabled">Print Contract</a>
+      </div>
+      <!-- /.grouped-btns -->
+    </div>
+  </div>
+  <!-- /.create-sn -->
+</div>
+<!-- /.tab-body-con -->
+
+<div class="modal"
+  *ngIf="!!state.isWranModal">
+  <div class="modal-con modal-alert modal-warning">
+  <div class="msg">
+    <div class="msgtext">Warning!</div>
+
+    <div class="info">This application has not been saved yet. Are you sure want to cancel this updates?</div>
+  </div>
+  <div class="action">
+    <a class="btn btn-warn " (click)="showWarningModal(false)">Cancel</a>
+    <a class="btn btn-warn btn-secondary" routerLink="../history">OK, Leave this</a>
+  </div>
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+
+
+<div class="modal"
+  *ngIf="!!state.isSubmitModal">
+  <div class="modal-con modal-alert modal-pre-approval">
+
+ <div class="msg">
+ <figure class="fig"><i class="success"></i></figure>
+ <h2>Application Submitted</h2>
+ <div class="text">Successfully submit this application!!</div>
+ </div>
+
+    
+   
+    <div class="actions centered">
+      <a class="btn btn-secondary" (click)="showSubmitModal(false)" >OK</a>
+    </div>
+    <!-- /.actions -->
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+<!-- /.submitModal -->

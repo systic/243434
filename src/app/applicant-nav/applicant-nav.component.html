@@ -1,0 +1,29 @@
+<nav class="child-tab-nav">
+  <a class="tab-nav car-details" routerLink="../general"
+    [class.active]="activeNav==='quotationApplicant'"
+  ><i></i></a>
+  <a class="tab-nav profile-details" routerLink="../profileDetails"
+    [class.active]="activeNav==='profileDetails'"
+    [class.error-state]="!!profileDetailsError"
+  ><i></i></a>
+  <a class="tab-nav address-details" routerLink="../addressDetails"
+    [class.active]="activeNav==='addressDetails'"
+  ><i></i></a>
+
+  <a class="tab-nav work-details" routerLink="../workDetails"
+    [class.active]="activeNav==='workDetails'"
+  ><i></i></a>
+  <a class="tab-nav personal-pref" routerLink="../personalPref"
+    [class.active]="activeNav==='personalPref'"
+  ><i></i></a>
+  <a class="tab-nav pep" routerLink="../pep"
+    [class.active]="activeNav==='pep'"
+  ><i></i></a>
+  <a class="tab-nav doc" routerLink="../doc"
+    [class.active]="activeNav==='doc'"
+  ><i></i></a>
+  <a class="tab-nav history" routerLink="../history"
+    [class.active]="activeNav==='history'"
+  ><i></i></a>
+</nav>
+<!-- /.child-tab-nav -->

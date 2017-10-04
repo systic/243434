@@ -1,0 +1,59 @@
+<app-main-head></app-main-head>
+<main class="main main-contact">
+  <div class="contact-viewport light">
+    <form class="form-sendmsg">
+      <h2>Send us a message</h2>
+      <div class="tagline">You can directly type your message below!</div>
+      <div class="form-row">
+        <label for="Subject">Subject <span class="required">*</span></label>
+        <div class="val">
+          <input type="text" class="input-ctrl" name="Subject" id="Subject" />
+        </div>
+      </div>
+      <!-- /.form-row -->
+      <div class="form-row">
+        <label for="Message">Message <span class="required">*</span></label>
+        <div class="val">
+          <input type="text" class="input-ctrl" name="Message" id="Message" />
+        </div>
+      </div>
+      <!-- /.form-row -->
+      <div class="actions">
+        <a class="btn btn-msg" (click)="showSentModal(true)">Send Message</a>
+      </div>
+    </form>
+    <!-- /.form-sendmsg -->
+  </div>
+  <footer class="contact-footer">
+    <div class="contact-viewport gray">
+      <h2>Or Contact us directly!</h2>
+      <div class="tagline">These are our contact information</div>
+
+      <div class="contacts">
+        <div class="tel"><a href="tel:{{contact.tel}}">{{contact.tel}}</a></div>
+        <div class="mail"><a href="mailto:{{contact.mail}}">{{contact.mail}}</a></div>
+        <div class="addr"><div>{{contact.addrLine}}</div>
+        <div>{{contact.addrLine2}}</div></div>
+      </div>
+    </div>
+  </footer>
+  <!-- /.contact-footer -->
+</main>
+<!-- /.main main-contact -->
+
+<div class="modal"
+  *ngIf="!!state.isSentModal">
+  <div class="modal-con modal-success">
+    <div class="msg">
+      <figure class="fig">
+        <i class="success"></i>
+      </figure>
+      <div class="msgtext">Message Sent</div>
+      <div class="info">Your message has been sent</div>
+    </div>
+    <div class="action">
+      <a class="btn btn-ok" (click)="showSentModal(false)">OK</a>
+    </div>
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>

@@ -1,0 +1,305 @@
+<app-applicant-nav [activeNav] = "'doc'"></app-applicant-nav>
+
+<div class="tab-body-con">
+  <div class="modify-sn" *ngIf="!!state.dataLoaded && !!state.lookupLoaded">
+    <div class="detailed-quotation liquid">
+      <div class="error-box"
+        *ngIf="!!state.hasError"
+      >
+        <div class="errors" *ngFor="let item of spouse.error">{{item.msg}}</div>
+      </div>
+      <!-- /.error-box -->
+      <form class="form-modify">
+        <div class="expandable-sn">
+                  <header>
+                    <h3><a class="toggle-handle arrow"></a> <span>Documents required to Analysis Credit Decision</span></h3>
+                  </header>
+                  <div class="wrapper-expcon">
+
+                    <div class="bar-doc"
+                      *ngFor="let item of docReq"
+                      >
+                      <div class="doc-gr name"><a>{{item.name}}</a></div>
+                      <div class="doc-gr status {{item.status | lowercase}}">{{item.status}}</div>
+                      <div class="doc-gr doc">{{item.doc}}</div>
+                      <div class="doc-gr id"><span class="id-val" *ngIf="!!item.id">{{item.id}}</span></div>
+                      <div class="doc-gr actions">
+                        <a class="del" [class.disabled]="!item.status"></a> <a class="edit" [class.disabled]="!item.doc"></a><a class="upload"></a>
+                      </div>
+                    </div>
+                    <!-- /.bar-doc -->
+                </div>
+                  <!-- /.wrapper-expcon -->
+        </div>
+        <!-- /.expandable-sn -->
+        <div class="expandable-sn spacing-t">
+          <header>
+            <h3><a class="toggle-handle arrow"></a> <span>Post Application Data</span></h3>
+          </header>
+          <div class="wrapper-expcon">
+            <div class="con-sn">
+              <div class="col">
+                <div class="gr">
+                  <h6>Account Type</h6>
+                  <div class="val">
+                    <app-select [childClass]="'select-ctrl'"
+                      [isOpen]="false"
+                      [list]="lookup.accType"
+                      [placeholder]= "''"
+                      [(val)] = "doc.accType"
+                      [default] = "''"
+                      [prefix] = "''"
+                    ></app-select>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <h6>Bank</h6>
+                  <div class="val">
+                    <app-select [childClass]="'select-ctrl'"
+                      [isOpen]="false"
+                      [list]="lookup.bank"
+                      [placeholder]= "''"
+                      [(val)] = "doc.bank"
+                      [default] = "''"
+                      [prefix] = "''"
+                    ></app-select>
+                   </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <h6>No. de Cuenta/CLABE</h6>
+                  <div class="val">
+                    <input type="text" class="input-ctrl"  name="cla" [(ngModel)]="doc.cla" />
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <h6>Signing Date</h6>
+                  <div class="val">
+                    <input type="text" class="input-ctrl datepicker"  name="date" [(ngModel)]="doc.date" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+            <div class="con-sn">
+              <div class="col">
+                <div class="gr">
+                  <h6>Vin Number</h6>
+                  <div class="val">
+                  <input type="text" class="input-ctrl"  name="vinNo" [(ngModel)]="doc.vinNo" />
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <h6><span>Engine Number</span></h6>
+                  <div class="val">
+                    <input type="text" class="input-ctrl"  name="engingeNo" [(ngModel)]="doc.engingeNo" />
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <h6>Body work</h6>
+                  <div class="val">
+                    <input type="text" class="input-ctrl"  name="bodyWork" [(ngModel)]="doc.bodyWork" />
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <h6>Package Letter to indicate Model</h6>
+                  <div class="val">
+                    <input type="text" class="input-ctrl"  name="plm" [(ngModel)]="doc.plm" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+            <div class="con-sn">
+              <div class="col">
+                <div class="gr">
+                  <h6>Signature Place</h6>
+                  <div class="val">
+                    <input type="text" class="input-ctrl"  name="sp" [(ngModel)]="doc.sp" />
+                  </div>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <h6>Vendor</h6>
+                  <div class="val">
+                    <input type="text" class="input-ctrl"  name="ven" [(ngModel)]="doc.ven" />
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <h6>Contract / Reference</h6>
+                  <div class="val">
+                    <input type="text" class="input-ctrl"  name="cont" [(ngModel)]="doc.cont" />
+                  </div>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <h6>GAP Insurance Number.</h6>
+                  <div class="val">
+                    <input type="text" class="input-ctrl"  name="gap" [(ngModel)]="doc.gap" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+            <div class="con-sn">
+              <div class="col">
+                <div class="gr">
+                  <h6>Use data for marketing</h6>
+                  <div class="val">
+                    <a class="chk-ctrl flipped" 
+                      [class.checked]="doc.udm==='Yes'"
+                      (click) = "doc.udm==='Yes'?'No':'Yes'"
+                    >Yes</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <h6>Unemployment Insurance Number</h6>
+                  <div class="val">
+                    <input type="text" class="input-ctrl"  name="uin" [(ngModel)]="doc.uin" />
+                  </div>
+                </div>
+              </div>
+              <div class="col col-2x">
+                <div class="gr">
+                  <h6>Referred by</h6>
+                  <div class="val">
+
+                    <div class="new-old">
+                      <a class="new-el radio-ctrl" 
+                      [class.checked]="doc.refBy==='No one'"
+                      (click) = "doc.refBy='No one'"
+                      >No one</a>
+                      <a class="new-el radio-ctrl" 
+                      [class.checked]="doc.refBy==='GMF ONE'"
+                      (click) = "doc.refBy='GMF ONE'"
+                      >GMF ONE</a>
+                      <a class="new-el radio-ctrl" 
+                      [class.checked]="doc.refBy==='GMBuyPower'"
+                      (click) = "doc.refBy='GMBuyPower'"
+                      >GMBuyPower</a>
+                      <a class="new-el radio-ctrl" 
+                      [class.checked]="doc.refBy==='Credit Fair'"
+                      (click) = "doc.refBy='Credit Fair'"
+                      >Credit Fair</a>
+                    </div>
+                    <!-- /.new-old -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+            <div class="con-sn">
+              <div class="col fluid">
+                <div class="gr">
+                  <h6>Comments</h6>
+                  <div class="val">
+                    <textarea class="textarea" name="comments" [(ngModel)]="doc.comments" ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+          </div>
+          <!-- /.wrapper-expcon -->
+        </div>
+        <!-- /.expandable-sn -->
+        <div class="expandable-sn spacing-t">
+          <header>
+            <h3><a class="toggle-handle arrow"></a> <span>Contract Printing</span></h3>
+          </header>
+         <div class="wrapper-expcon">
+           <div class="bar-doc"
+             *ngFor="let item of contractPrinting"
+             >
+             <div class="doc-gr name"><a>{{item.name}}</a></div>
+              <div class="doc-gr status {{item.status | lowercase}}">{{item.status}}</div>
+             <div class="doc-gr doc">{{item.doc}}</div>
+             <div class="doc-gr id"><span class="id-val" *ngIf="!!item.id">{{item.id}}</span></div>
+             <div class="doc-gr actions">
+               <a class="del"></a> <a class="edit"></a><a class="upload"></a>
+             </div>
+           </div>
+           <!-- /.bar-doc -->
+         </div>
+          <!-- /.wrapper-expcon -->
+        </div>
+        <!-- /.expandable-sn -->
+      </form>
+      <!-- /.form-modify -->
+    </div>
+    <!-- /.detailed-quotation -->
+    <div class="actions footer-actions spacing-b">
+      <div class="grouped-btns lt">
+      <a class="btn prev" routerLink="../pep" >Previous <i></i></a>
+      <a class="btn next" routerLink="../history" >Next <i></i></a>
+      </div>
+      <div class="grouped-btns rt">
+        <a class="btn btn-secondary" (click)="saveUpdates()">Save updates</a>
+        <a class="btn btn-secondary off-readonly" (click)="showWarningModal(true)">Edit / Cancel</a>
+        <a class="btn btn-secondary on-readonly" routerLink="/quotationApplicant/general">Edit / Cancel</a>
+        <a class="btn btn-secondary">Copy</a>
+        <a class="btn btn-secondary"  (click)="showSubmitModal(true)">Submit</a>
+        <a class="btn btn-secondary disabled">Print Contract</a>
+      </div>
+      <!-- /.grouped-btns -->
+    </div>
+  </div>
+  <!-- /.create-sn -->
+</div>
+<!-- /.tab-body-con -->
+
+<div class="modal"
+  *ngIf="!!state.isWranModal">
+  <div class="modal-con modal-alert modal-warning">
+  <div class="msg">
+    <div class="msgtext">Warning!</div>
+
+    <div class="info">This application has not been saved yet. Are you sure want to cancel this updates?</div>
+  </div>
+  <div class="action">
+    <a class="btn btn-warn " (click)="showWarningModal(false)">Cancel</a>
+    <a class="btn btn-warn btn-secondary" routerLink="../history">OK, Leave this</a>
+  </div>
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+
+
+<div class="modal"
+  *ngIf="!!state.isSubmitModal">
+  <div class="modal-con modal-alert modal-pre-approval">
+
+ <div class="msg">
+ <figure class="fig"><i class="success"></i></figure>
+ <h2>Application Submitted</h2>
+ <div class="text">Successfully submit this application!!</div>
+ </div>
+
+    
+   
+    <div class="actions centered">
+      <a class="btn btn-secondary" (click)="showSubmitModal(false)" >OK</a>
+    </div>
+    <!-- /.actions -->
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+<!-- /.submitModal -->

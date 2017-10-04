@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17">
+    <g fill="none" fill-rule="evenodd">
+        <g font-family="Lato-Regular, Lato" font-size="14">
+            <text fill="#00519E" transform="translate(-1130 -4)">
+                <tspan x="10.555" y="18">P200-93801</tspan>
+            </text>
+            <text fill="#666" transform="translate(-1130 -4)">
+                <tspan x="137.209" y="18">Juan Perez</tspan>
+            </text>
+            <text fill="#666" transform="translate(-1130 -4)">
+                <tspan x="290.836" y="18">Jones Wild</tspan>
+            </text>
+            <text fill="#666" transform="translate(-1130 -4)">
+                <tspan x="425.7" y="18">Buffalo, NY</tspan>
+            </text>
+            <text fill="#666" transform="translate(-1130 -4)">
+                <tspan x="554.7" y="18">$16,936</tspan>
+            </text>
+            <text fill="#666" transform="translate(-1130 -4)">
+                <tspan x="648.518" y="18">48 months</tspan>
+            </text>
+            <text fill="#666" transform="translate(-1130 -4)">
+                <tspan x="754.064" y="18">Spark 5dr HB</tspan>
+            </text>
+            <text fill="#666" transform="translate(-1130 -4)">
+                <tspan x="1010.891" y="18">Awaiting Decision</tspan>
+            </text>
+            <text fill="#666" transform="translate(-1130 -4)">
+                <tspan x="881.891" y="18">Apr 15, 2017</tspan>
+            </text>
+        </g>
+        <path fill="#F82208" d="M9.868 2.52l6.277 10.984A1 1 0 0 1 15.277 15H2.723a1 1 0 0 1-.868-1.496L8.132 2.519a1 1 0 0 1 1.736 0z"/>
+        <path fill="#FFF" d="M9.542 6v2.722c0 .292-.018.581-.053.868-.034.288-.08.58-.138.878h-.999c-.057-.298-.103-.59-.138-.878a7.191 7.191 0 0 1-.052-.868V6h1.38zM8 12.186a.79.79 0 0 1 .24-.576.84.84 0 0 1 .598-.237c.117 0 .226.02.328.064.101.043.19.1.266.173a.788.788 0 0 1 .243.576.807.807 0 0 1-.243.58.835.835 0 0 1-.594.234.877.877 0 0 1-.334-.062.808.808 0 0 1-.44-.43.807.807 0 0 1-.064-.322z"/>
+    </g>
+</svg>

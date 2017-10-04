@@ -1,0 +1,16 @@
+
+// mixins
+@mixin ease(){
+  transition: 0.3s;
+}
+
+@mixin shadow(){
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* background size */
+@mixin bgz($width, $height) {
+    width: $width;
+    height: $height;
+    background-size: $width $height;
+}

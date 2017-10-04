@@ -1,0 +1,467 @@
+<app-applicant-nav [activeNav] = "'workDetails'"></app-applicant-nav>
+
+<div class="tab-body-con">
+  <div class="modify-sn" *ngIf="!!state.dataLoaded && !!state.lookupLoaded">
+    <div class="detailed-quotation liquid">
+      <form class="form-modify">
+
+      <div class="expandable-sn">
+              <header>
+                <h3><a class="toggle-handle arrow"></a> <span>Employment</span></h3>
+              </header>
+              <div class="wrapper-expcon">
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Origin of Funds</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.oaf"
+                          [placeholder]= "''"
+                          [(val)] = "emp.oaf"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Profession</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.doc"
+                          [placeholder]= "''"
+                          [(val)] = "emp.doc"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Ocupation</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.ocu"
+                          [placeholder]= "''"
+                          [(val)] = "emp.ocu"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Others</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="oth" [(ngModel)]="emp.oth" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Activity</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.act"
+                          [placeholder]= "''"
+                          [(val)] = "emp.act"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6><span>Company name</span></h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="com" [(ngModel)]="emp.com" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Country</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.cou"
+                          [placeholder]= "''"
+                          [(val)] = "emp.cou"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>State</h6>
+                      <app-select [childClass]="'select-ctrl'"
+                        [isOpen]="false"
+                        [list]="lookup.state"
+                        [placeholder]= "''"
+                        [(val)] = "emp.sta"
+                        [default] = "''"
+                        [prefix] = "''"
+                      ></app-select>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Province</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.province"
+                          [placeholder]= "''"
+                          [(val)] = "emp.pro"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>City</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="cit" [(ngModel)]="emp.cit" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Neighborhood</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.neighborhood"
+                          [placeholder]= "''"
+                          [(val)] = "emp.nei"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Postal Code</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="pos" [(ngModel)]="emp.pos" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Street</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="str" [(ngModel)]="emp.str" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Ext.</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="ext" [(ngModel)]="emp.ext" />
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6 class="has-alert">Int.</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="int" [(ngModel)]="emp.int" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Telephone area code</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="tac" [(ngModel)]="emp.tac" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Telephone</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="tel" [(ngModel)]="emp.tel" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Extension</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="ext2" [(ngModel)]="emp.ext2" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Seniority years</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="sey" [(ngModel)]="emp.sey" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Seniority months</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="sem" [(ngModel)]="emp.sem" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Type of Contract</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.toc"
+                          [placeholder]= "''"
+                          [(val)] = "emp.toc"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Monthly Income</h6>
+                      <div class="val has-add">
+                        <input type="text" class="input-ctrl"  name="moi" [(ngModel)]="emp.moi" />
+                        <a class="add"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Additional Monthly Income</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="ami" [(ngModel)]="emp.ami" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Additional Income - Details</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="aid" [(ngModel)]="emp.aid" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+              </div>
+              <!-- /.wrapper-expcon -->
+      </div>
+        <!-- /.expandable-sn -->
+
+      <div class="expandable-sn  spacing-t">
+              <header>
+                <h3><a class="toggle-handle arrow"></a> <span>Previous Employment</span></h3>
+              </header>
+              <div class="wrapper-expcon">
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Company name</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="com" [(ngModel)]="pEmp.com" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Phone - Area Code.</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="pac" [(ngModel)]="pEmp.pac" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Phone - No label.</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="pnl" [(ngModel)]="pEmp.pnl" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Phone - No Label 2</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="pn2" [(ngModel)]="pEmp.pn2" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+              </div>
+              <!-- /.wrapper-expcon -->
+      </div>
+        <!-- /.expandable-sn -->
+
+      <div class="expandable-sn  spacing-t">
+              <header>
+                <h3><a class="toggle-handle arrow"></a> <span>Spouse Employment</span></h3>
+              </header>
+              <div class="wrapper-expcon">
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Origin of Funds</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.oof"
+                          [placeholder]= "''"
+                          [(val)] = "sEmp.oof"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Profession</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.pro"
+                          [placeholder]= "''"
+                          [(val)] = "sEmp.pro"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select></div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Activity</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.act2"
+                          [placeholder]= "''"
+                          [(val)] = "sEmp.act"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Occupation</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.occ"
+                          [placeholder]= "''"
+                          [(val)] = "sEmp.occ"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+              </div>
+              <!-- /.wrapper-expcon -->
+      </div>
+        <!-- /.expandable-sn -->
+      
+      </form>
+      <!-- /.form-modify -->
+    </div>
+    <!-- /.detailed-quotation -->
+    <div class="actions footer-actions spacing-b">
+      <div class="grouped-btns lt">
+      <a class="btn prev" routerLink="../addressDetails" >Previous <i></i></a>
+      <a class="btn next" routerLink="../personalPref" >Next <i></i></a>
+      </div>
+      <div class="grouped-btns rt">
+        <a class="btn btn-secondary">Save updates</a>
+        <a class="btn btn-secondary off-readonly" (click)="showWarningModal(true)">Edit / Cancel</a>
+        <a class="btn btn-secondary on-readonly" routerLink="/quotationApplicant/general">Edit / Cancel</a>
+        <a class="btn btn-secondary">Copy</a>
+        <a class="btn btn-secondary"  (click)="showSubmitModal(true)">Submit</a>
+        <a class="btn btn-secondary disabled">Print Contract</a>
+      </div>
+      <!-- /.grouped-btns -->
+    </div>
+  </div>
+  <!-- /.create-sn -->
+</div>
+<!-- /.tab-body-con -->
+
+<div class="modal"
+  *ngIf="!!state.isWranModal">
+  <div class="modal-con modal-alert modal-warning">
+  <div class="msg">
+    <div class="msgtext">Warning!</div>
+
+    <div class="info">This application has not been saved yet. Are you sure want to cancel this updates?</div>
+  </div>
+  <div class="action">
+    <a class="btn btn-warn " (click)="showWarningModal(false)">Cancel</a>
+    <a class="btn btn-warn btn-secondary" routerLink="../history">OK, Leave this</a>
+  </div>
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+
+
+<div class="modal"
+  *ngIf="!!state.isSubmitModal">
+  <div class="modal-con modal-alert modal-pre-approval">
+
+ <div class="msg">
+ <figure class="fig"><i class="success"></i></figure>
+ <h2>Application Submitted</h2>
+ <div class="text">Successfully submit this application!!</div>
+ </div>
+
+    
+   
+    <div class="actions centered">
+      <a class="btn btn-secondary" (click)="showSubmitModal(false)" >OK</a>
+    </div>
+    <!-- /.actions -->
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+<!-- /.submitModal -->

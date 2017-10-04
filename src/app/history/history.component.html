@@ -1,0 +1,110 @@
+<app-applicant-nav [activeNav] = "'history'"></app-applicant-nav>
+
+<div class="tab-body-con">
+  <div class="modify-sn" *ngIf="!!state.dataLoaded">
+    <div class="detailed-quotation liquid">
+      <form class="form-modify">
+        <div class="expandable-sn">
+          <header>
+            <h3><a class="toggle-handle arrow"></a> <span>History</span></h3>
+          </header>
+          <div class="wrapper-expcon">
+
+            <div class="history-table-wrap">
+              <table class="history-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Comments</th>
+                  <th>Modified by</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of history">
+                  <td>{{item.date}}</td>
+                  <td>{{item.status}}</td>
+                  <td>{{item.comments}}</td>
+                  <td>{{item.modifiedBy}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.history-table-wrap -->
+
+            <div class="bar-doc"
+              *ngFor="let item of docReq"
+              >
+              <div class="doc-gr name"><a>{{item.name}}</a></div>
+              <div class="doc-gr status {{item.status | lowercase}}">{{item.status}}</div>
+              <div class="doc-gr doc">{{item.doc}}</div>
+              <div class="doc-gr id"><span class="id-val" *ngIf="!!item.id">{{item.id}}</span></div>
+              <div class="doc-gr actions">
+                <a class="del" [class.disabled]="!item.status"></a> <a class="edit" [class.disabled]="!item.doc"></a><a class="upload"></a>
+                </div>
+              </div>
+              <!-- /.bar-doc -->
+          </div>
+          <!-- /.wrapper-expcon -->
+        </div>
+        <!-- /.expandable-sn -->
+      </form>
+      <!-- /.form-modify -->
+    </div>
+    <!-- /.detailed-quotation -->
+    <div class="actions footer-actions spacing-b">
+      <div class="grouped-btns lt">
+      <a class="btn prev" routerLink="../doc" >Previous <i></i></a>
+      </div>
+      <div class="grouped-btns rt">
+        <a class="btn btn-secondary" (click)="saveUpdates()">Save updates</a>
+        <a class="btn btn-secondary off-readonly" (click)="showWarningModal(true)">Edit / Cancel</a>
+        <a class="btn btn-secondary on-readonly" routerLink="/quotationApplicant/general">Edit / Cancel</a>
+        <a class="btn btn-secondary">Copy</a>
+        <a class="btn btn-secondary"  (click)="showSubmitModal(true)">Submit</a>
+        <a class="btn btn-secondary disabled">Print Contract</a>
+      </div>
+      <!-- /.grouped-btns -->
+    </div>
+  </div>
+  <!-- /.create-sn -->
+</div>
+<!-- /.tab-body-con -->
+
+<div class="modal"
+  *ngIf="!!state.isWranModal">
+  <div class="modal-con modal-alert modal-warning">
+  <div class="msg">
+    <div class="msgtext">Warning!</div>
+
+    <div class="info">This application has not been saved yet. Are you sure want to cancel this updates?</div>
+  </div>
+  <div class="action">
+    <a class="btn btn-warn " (click)="showWarningModal(false)">Cancel</a>
+    <a class="btn btn-warn btn-secondary" routerLink="../history">OK, Leave this</a>
+  </div>
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+
+
+<div class="modal"
+  *ngIf="!!state.isSubmitModal">
+  <div class="modal-con modal-alert modal-pre-approval">
+
+ <div class="msg">
+ <figure class="fig"><i class="success"></i></figure>
+ <h2>Application Submitted</h2>
+ <div class="text">Successfully submit this application!!</div>
+ </div>
+
+    
+   
+    <div class="actions centered">
+      <a class="btn btn-secondary" (click)="showSubmitModal(false)" >OK</a>
+    </div>
+    <!-- /.actions -->
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+<!-- /.submitModal -->

@@ -1,0 +1,225 @@
+{
+  "details":{
+    "delarName":"Dealer Name",
+    "dealarLoc":"Location",
+    "logger":{
+      "name":"Abner Abel",
+      "role":"Dealer Group Manager"
+    },
+    "delarSiteOpts": [
+      {"name":"All", "isChecked": false, "isAll":true},
+      {"name":"Buffalo, NY", "isChecked": true},
+      {"name":"Lubbok, TX", "isChecked": true},
+      {"name":"Albany, NY", "isChecked": false},
+      {"name":"Binghamton, NY", "isChecked": true},
+      {"name":"Buffalo, NY", "isChecked": true},
+      {"name":"Lubbok, TX", "isChecked": true},
+      {"name":"Albany, NY", "isChecked": false},
+      {"name":"Binghamton, NY", "isChecked": true}
+    ],
+    "dash":{
+      "totalApps": 289,
+      "changeBy": 29,
+      "proposalCount":53
+    },
+    "chartDataWeek": [
+      {"label": "Approved", "color":"#000000", "value": 2},
+      {"label": "Rejected", "color":"#0b3162", "value": 2},
+      {"label": "Qualified", "color":"#00519e", "value": 2},
+      {"label": "Active", "color":"#246cc0", "value": 6},   
+      {"label": "Purchased", "color":"#009be2", "value": 2},
+      {"label": "Held Offereing", "color":"#00cbe1", "value": 2},
+      {"label": "Submitted to Payout", "color":"#8fe4ef", "value": 1},
+      {"label": "Awaiting Decision", "color":"#9dd3db", "value": 2}
+    ],
+    "chartDataDate": [
+      {"label": "Approved", "color":"#000000", "value": 4},
+      {"label": "Rejected", "color":"#0b3162", "value": 4},
+      {"label": "Qualified", "color":"#00519e", "value": 4},
+      {"label": "Active", "color":"#246cc0", "value": 12},   
+      {"label": "Purchased", "color":"#009be2", "value": 4},
+      {"label": "Held Offereing", "color":"#00cbe1", "value": 4},
+      {"label": "Submitted to Payout", "color":"#8fe4ef", "value": 10},
+      {"label": "Awaiting Decision", "color":"#9dd3db", "value": 4}
+    ],
+    "chartDataMonth": [
+      {"label": "Approved", "color":"#000000", "value": 8},
+      {"label": "Rejected", "color":"#0b3162", "value": 8},
+      {"label": "Qualified", "color":"#00519e", "value": 8},
+      {"label": "Active", "color":"#246cc0", "value": 1},   
+      {"label": "Purchased", "color":"#009be2", "value": 8},
+      {"label": "Held Offereing", "color":"#00cbe1", "value": 8},
+      {"label": "Submitted to Payout", "color":"#8fe4ef", "value": 2},
+      {"label": "Awaiting Decision", "color":"#9dd3db", "value": 8}
+    ],
+    "chartLabelLt": [ 
+      {"label": "Purchased", "color":"#009be2", "value": 2},
+      {"label": "Held Offereing", "color":"#00cbe1", "value": 2},
+      {"label": "Submitted to Payout", "color":"#8fe4ef", "value": 1},
+      {"label": "Awaiting Decision", "color":"#9dd3db", "value": 2}
+    ],
+    "chartLabelRt":[ {"label": "Approved", "color":"#000000", "value": 2},
+      {"label": "Rejected", "color":"#0b3162", "value": 2},
+      {"label": "Qualified", "color":"#00519e", "value": 2},
+      {"label": "Active", "color":"#246cc0", "value": 6}
+    ],
+    "chartLabelLtWeek": [ 
+      {"label": "Purchased", "color":"#009be2", "value": 4},
+      {"label": "Held Offereing", "color":"#00cbe1", "value": 4},
+      {"label": "Submitted to Payout", "color":"#8fe4ef", "value": 2},
+      {"label": "Awaiting Decision", "color":"#9dd3db", "value": 4}
+    ],
+    "chartLabelRtWeek":[ {"label": "Approved", "color":"#000000", "value": 4},
+      {"label": "Rejected", "color":"#0b3162", "value": 4},
+      {"label": "Qualified", "color":"#00519e", "value": 4},
+      {"label": "Active", "color":"#246cc0", "value": 8}
+    ],
+    "chartLabelLtMonth": [ 
+      {"label": "Purchased", "color":"#009be2", "value": 8},
+      {"label": "Held Offereing", "color":"#00cbe1", "value": 8},
+      {"label": "Submitted to Payout", "color":"#8fe4ef", "value": 1},
+      {"label": "Awaiting Decision", "color":"#9dd3db", "value": 8}
+    ],
+    "chartLabelRtMonth":[ {"label": "Approved", "color":"#000000", "value": 8},
+      {"label": "Rejected", "color":"#0b3162", "value": 8},
+      {"label": "Qualified", "color":"#00519e", "value": 8},
+      {"label": "Active", "color":"#246cc0", "value": 6}
+    ],
+    "autoSuggestList":["Diane Keaton", "Juan Perez", "Mielane Diane", "Zul Diane Manik", "Thomas A.Edison", "Jane Smith", "Albus McDonalds"],
+    "delarWorkQueue":[
+      {
+        "applicationId":"P200-93801",
+        "clientName":"Juan Perez",
+        "salesPerson":"Jones Wild",
+        "delarSite":"Buffalo, NY",
+        "loan":"$16,936",
+        "term":"48 months",
+        "vehicle":"Spark 5dr HB",
+        "lastUpdate":"Apr 15, 2017",
+        "stageProcess":"Awaiting Decision",
+        "hasAlert":true
+      },
+      
+      {
+        "applicationId":"P200-93802",
+        "clientName":"Thomas A.Edison",
+        "salesPerson":"Earnest Ward",
+        "delarSite":"Buffalo, NY",
+        "loan":"$16,936",
+        "term":"48 months",
+        "vehicle":"Spark 5dr HB",
+        "lastUpdate":"Apr 15, 2017",
+        "stageProcess":"Awaiting Decision"
+      },
+      
+      {
+        "applicationId":"P200-93804",
+        "clientName":"Atlanta High",
+        "salesPerson":"Earnest Ward",
+        "hasAlert":true,
+        "delarSite":"Lubbock, TX",
+        "loan":"$16,936",
+        "term":"48 months",
+        "vehicle":"Spark 5dr HB",
+        "lastUpdate":"Apr 15, 2017",
+        "stageProcess":"Awaiting Decision"
+      },
+      
+      {
+        "applicationId":"P200-93821",
+        "clientName":"Milla Kunis",
+        "salesPerson":"Albert Einstein",
+        "delarSite":"Buffalo, NY",
+        "loan":"$16,936",
+        "term":"48 months",
+        "vehicle":"Spark 5dr HB",
+        "lastUpdate":"Apr 15, 2017",
+        "stageProcess":"Awaiting Decision"
+      },
+      
+      {
+        "applicationId":"P200-93845",
+        "clientName":"Diane Keaton",
+        "salesPerson":"Earnest Ward",
+        "delarSite":"Lubbock, TX",
+        "loan":"$16,936",
+        "term":"48 months",
+        "vehicle":"Spark 5dr HB",
+        "lastUpdate":"Apr 15, 2017",
+        "stageProcess":"Awaiting Decision"
+      },
+      
+      {
+        "applicationId":"P200-93881",
+        "clientName":"Milla Kunis",
+        "hasAlert":true,
+        "salesPerson":"Jones Wild",
+        "delarSite":"Buffalo, NY",
+        "loan":"$16,936",
+        "term":"48 months",
+        "vehicle":"Spark 5dr HB",
+        "lastUpdate":"Apr 15, 2017",
+        "stageProcess":"Qualified"
+      },
+      
+      {
+        "applicationId":"P200-93221",
+        "clientName":"Mielane Diane",
+        "salesPerson":"Jones Wild",
+        "delarSite":"Lubbock, TX",
+        "loan":"$16,936",
+        "term":"48 months",
+        "vehicle":"Spark 5dr HB",
+        "lastUpdate":"Apr 15, 2017",
+        "stageProcess":"Qualified"
+      },
+      
+      {
+        "applicationId":"P200-93241",
+        "clientName":"Milla Kunis",
+        "salesPerson":"Jones Wild",
+        "delarSite":"Buffalo, NY",
+        "loan":"$16,936",
+        "term":"48 months",
+        "vehicle":"Spark 5dr HB",
+        "lastUpdate":"Apr 15, 2017",
+        "stageProcess":"Held Offering"
+      },
+      
+      {
+        "applicationId":"P200-96661",
+        "clientName":"Diane Keaton",
+        "salesPerson":"Jones Wild",
+        "delarSite":"Buffalo, NY",
+        "loan":"$16,936",
+        "term":"48 months",
+        "hasAlert":true,
+        "vehicle":"Spark 5dr HB",
+        "lastUpdate":"Apr 15, 2017",
+        "stageProcess":"Held Offering"
+      },
+      
+      {
+        "applicationId":"P200-97891",
+        "clientName":"Thomas A.Edison",
+        "salesPerson":"Jones Wild",
+        "delarSite":"Buffalo, NY",
+        "loan":"$16,936",
+        "term":"48 months",
+        "vehicle":"Spark 5dr HB",
+        "lastUpdate":"Apr 15, 2017",
+        "stageProcess":"Awaiting Decision"
+      }
+
+    ],
+    "alertModal": {
+      "itemId":"Action Required for T1622-82903",
+      "details1":"Application is missing documentation. Please see below!",
+      "comments":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a nibh sem. Integer mi arcu, vestibulum sit amet ullamcorper eu, feugiat in augue.",
+      "idVerification":{
+        "id":"Drivers Licence",
+        "status": "Upload"
+      }
+    }
+  }
+}

@@ -1,0 +1,483 @@
+<app-applicant-nav [activeNav] = "'quotationApplicant'"></app-applicant-nav>
+
+<div class="tab-body-con">
+  <div class="modify-sn" *ngIf="!!state.dataLoaded && !!state.lookupLoaded">
+    <div class="detailed-quotation liquid">
+      <form class="form-modify">
+        <div class="expandable-sn">
+          <header>
+            <h3><a class="toggle-handle arrow"></a> <span>General</span></h3>
+          </header>
+          <div class="wrapper-expcon">
+            <div class="con-sn">
+              <div class="col">
+                  <div class="gr">
+                    <div class="inner">
+                      <h6>Date</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl datepicker" name="date" [(ngModel)] = "quote.vSel3.date" />
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <div class="inner">
+                    <h6>Customer Type</h6>
+                    <div class="val">
+                    <app-select [childClass]="'select-ctrl'"
+                      [isOpen]="false"
+                      [list]="lookup.custType"
+                      [placeholder]= "''"
+                      [(val)] = "quote.vSel3.custType"
+                      [default] = "''"
+                      [prefix] = "''"
+                    ></app-select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col centerd">
+                <div class="new-old">
+                  <a class="new-el radio-ctrl" 
+                  [class.checked]="!!quote.vSel3.isNew"
+                  (click) = "quote.vSel3.isNew=true"
+                  >New</a>
+                  <a class="new-el radio-ctrl" 
+                  [class.checked]="!quote.vSel3.isNew"
+                  (click) = "quote.vSel3.isNew=false"
+                  >Semi New / Used</a>
+                </div>
+                <!-- /.new-old -->
+              </div>
+            </div>
+            <!-- /.con-sn -->
+          </div>
+        </div>
+        <!-- /.expandable-sn -->
+        <div class="expandable-sn spacing-t">
+          <header>
+            <h3><a class="toggle-handle arrow"></a> <span>Car Details</span></h3>
+          </header>
+          <div class="wrapper-expcon">
+            <div class="con-sn">
+              <div class="col">
+                <div class="gr">
+                  <div class="inner">
+                    <h6>Model Year  <span class="required">*</span></h6>
+                    <div class="val">
+                    <app-select [childClass]="'select-ctrl'"
+                      [isOpen]="false"
+                      [list]="lookup.modelYear"
+                      [placeholder]= "''"
+                      [(val)] = "quote.vSel3.modelYear"
+                      [default] = "''"
+                      [prefix] = "''"
+                    ></app-select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <div class="inner">
+                    <h6>Make  <span class="required">*</span></h6>
+                    <div class="val">
+                    <app-select [childClass]="'select-ctrl'"
+                      [isOpen]="false"
+                      [list]="lookup.make"
+                      [placeholder]= "''"
+                      [(val)] = "quote.vSel3.make"
+                      [default] = "''"
+                      [prefix] = "''"
+                    ></app-select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr has-chk">
+                  <div class="inner">
+                    <h6>Model  <span class="required">*</span></h6>
+                    <div class="val">
+                    <app-select [childClass]="'select-ctrl'"
+                      [isOpen]="false"
+                      [list]="lookup.carModel"
+                      [placeholder]= "''"
+                      [(val)] = "quote.vSel3.carModel"
+                      [default] = "''"
+                      [prefix] = "''"
+                    ></app-select>
+                    </div>
+                  </div>
+                  <div class="inner rt">
+                    <a class="chk-ctrl" 
+                    [class.checked]="quote.vSel3.isAllModel"
+                    (click) = "quote.vSel3.isAllModel=!!quote.vSel3.isAllModel?false:true"
+                    >All</a>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+
+            <div class="con-sn">
+              <div class="col">
+                <div class="gr">
+                  <div class="inner">
+                    <h6>Category  <span class="required">*</span></h6>
+                    <div class="val">
+                    <app-select [childClass]="'select-ctrl'"
+                      [isOpen]="false"
+                      [list]="lookup.category"
+                      [placeholder]= "''"
+                      [(val)] = "quote.vSel3.category"
+                      [default] = "''"
+                      [prefix] = "''"
+                    ></app-select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <div class="inner">
+                    <h6>Term <span class="required">*</span></h6>
+                    <div class="val">
+                      <input type="text" class="input-ctrl" name="term" [(ngModel)] = "quote.vSel3.term" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <div class="inner">
+                    <h6>Selling Price <span class="required">*</span></h6>
+                    <div class="val">
+                      <input type="text" class="input-ctrl" name="sellingPrice" [(ngModel)] = "quote.vSel3.sellingPrice" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+
+            <div class="con-sn">
+              <div class="col">
+                <div class="gr">
+                  <div class="inner">
+                    <h6>Vehicle usage <span class="required">*</span></h6>
+                    <div class="val">
+                    <app-select [childClass]="'select-ctrl'"
+                      [isOpen]="false"
+                      [list]="lookup.verhicleUsage"
+                      [placeholder]= "''"
+                      [(val)] = "quote.vSel3.verhicleUsage"
+                      [default] = "''"
+                      [prefix] = "''"
+                    ></app-select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr has-chk">
+                  <div class="inner">
+                    <h6>Plans <span class="required">*</span></h6>
+                    <div class="val">
+                      <input type="text" class="input-ctrl" name="plans" [(ngModel)] = "quote.vSel3.plans" />
+                    </div>
+                  </div>
+                  <div class="inner rt">
+                    <a class="chk-ctrl" 
+                    [class.checked]="quote.vSel3.isAllPlans"
+                    (click) = "quote.vSel3.isAllPlans=!!quote.vSel3.isAllPlans?false:true"
+                    >All</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr">
+                  <div class="inner">
+                    <h6>Plan Details <span class="required">*</span></h6>
+                    <div class="val">
+                    <app-select [childClass]="'select-ctrl'"
+                      [isOpen]="false"
+                      [list]="lookup.planDetails"
+                      [placeholder]= "''"
+                      [(val)] = "quote.vSel3.planDetails"
+                      [default] = "''"
+                      [prefix] = "''"
+                    ></app-select>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+            <div class="con-sn">
+              
+              <div class="col">
+                <div class="gr has-chk">
+                  <div class="inner rt">
+                    <a class="chk-ctrl flipped" 
+                    [class.checked]="quote.vSel3.isFixedRate"
+                    (click) = "quote.vSel3.isFixedRate=!!quote.vSel3.isFixedRate?false:true"
+                    >Fixed rate</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr has-chk">
+                  <div class="inner rt">
+                    <a class="chk-ctrl flipped" 
+                    [class.checked]="quote.vSel3.withResource"
+                    (click) = "quote.vSel3.withResource=!!quote.vSel3.withResource?false:true"
+                    >With Resource</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="gr has-chk">
+                  <div class="inner rt">
+                    <a class="chk-ctrl flipped" 
+                    [class.checked]="quote.vSel3.isFleet"
+                    (click) = "quote.vSel3.isFleet=!!quote.vSel3.isFleet?false:true"
+                    >Fleet</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+          </div>
+          <!-- /.wrapper-expcon -->
+        </div>
+        <!-- /.expandable-sn -->
+        <div class="expandable-sn spacing-t">
+          <header>
+            <h3><a class="toggle-handle arrow"></a> <span>VAPs and Fees</span></h3>
+          </header>
+          <div class="wrapper-expcon">
+            <div class="con-sn" >
+               <div class="col"><h3>Category</h3></div>
+               <div class="col"></div>
+               <div class="col dual-heading"><h3>Financed</h3> <h3 class="rt">No Financed</h3></div>
+            </div>
+            <div class="con-sn"
+              *ngFor="let item of vap.allItems; let i = index"
+             >
+             <div class="col">
+                <div class="gr has-chk">
+                  <div class="inner rt">
+                    <a class="chk-ctrl flipped" 
+                    [class.grayed]="item.isChkDisabled"
+                    [class.checked]="item.isSelected"
+                    (click) = "item.isSelected=!!item.isSelected?false:true"
+                    >{{item.label}} <span *ngIf="item.isRequired" class="required">*</span></a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col">
+                <div class="gr">
+                  <div class="inner">
+                    <div class="val has-add"
+                    *ngIf="!!item.typeValue"
+                    >
+                        <input type="text" class="input-ctrl"  name="elvalue" value="{{item.typeValue}}" />
+                        <a class="add"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col">
+                <div class="bar-data-shifter">
+                  <div class="el-wrap">
+                    <input type="text" class="input-ctrl" name="financed" value = "{{item.amount}}"  
+                    (change)="updateInputValue($event,item)"
+                    [class.cleared]="!item.isFinanced"
+                    /> 
+                  </div>
+                  <a class="shift-button"
+                  [class.backward]="!item.isFinanced"
+                  (click) = "item.isFinanced = !!item.isFinanced?false:true"
+                  ></a>
+                  <div class="el-wrap">
+                    <input type="text" name="non-financed" class="input-ctrl" value = "{{item.amount}}"  
+                    (change)="updateInputValue($event,item)"
+                    [class.cleared]="!!item.isFinanced"
+                     /> 
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <!-- /.bar-data-shifter -->
+              </div>
+            </div>
+            <!-- /.con-sn -->
+
+            <div class="con-sn total-bar">
+              <div class="col"></div>
+              <div class="col"><span class="total-lbl">Total Amount</span></div>
+              <div class="col ">
+                <div class="total">
+                  <div class="lt">{{vap.totalFinanced}}</div>
+                  <div class="rt">{{vap.totalNonFinanced}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- /.con-sn total-bar -->
+
+            <div class="con-sn">
+              <div class="col">
+                  <div class="gr">
+                    <div class="inner">
+                      <h6>Security Deposit (Quantity)</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl" name="securityDeposit" [(ngModel)] = "vap.securityDeposit" />
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="gr">
+                    <div class="inner">
+                      <h6>1st Extraordinary Payment (Percentage)</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl" name="extPayment" [(ngModel)] = "vap.extPayment" />
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="gr">
+                    <div class="inner">
+                      <h6>Residual Value</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl" name="resiudualValue" [(ngModel)] = "vap.resiudualValue" />
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+            <div class="con-sn">
+              <div class="col">
+                  <div class="gr">
+                    <div class="inner">
+                      <h6>1st Extraordinary Payment (Value)</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl" name="extPayment1Val" [(ngModel)]="vap.extPayment1Val" />
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="gr">
+                    <div class="inner">
+                      <h6>Security Deposit (Value)</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl" name="securityValue" [ngModel]="vap.securityValue" />
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <!-- /.con-sn -->
+
+            <div class="calc-results">
+              <h3>Results  from the calculation</h3>
+              <div class="calc-con">
+                <div class="group">
+                  <span>Security Deposit (Quantity) :</span> <a>{{vap.results.securityDepositQty}}</a>
+                </div>
+                <div class="group">
+                  <span>Expected Maximum Monthly Payment:</span> <a>{{vap.results.expectedMaxMonthlyPayment}}</a>
+                </div>
+                <div class="group">
+                  <span>Monthly Regular Rent :</span> <a>{{vap.results.monthlyRegRent}}</a>
+                </div>
+                <div class="group">
+                  <span>First Payment Date :</span> <a>{{vap.results.firstPaymentDate}}</a>
+                </div>
+                <div class="group">
+                  <span>Customer rate :</span> <a>{{vap.results.custRate}}</a>
+                </div>
+                <div class="group">
+                  <span>CAT :</span> <a>{{vap.results.cat}}</a>
+                </div>
+                <div class="group">
+                  <span>Subsidy - Percentage :</span> <a>{{vap.results.subsidyPercent}}</a>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <!-- /.calc-results -->
+
+          </div>
+          <!-- /.wrapper-expcon -->
+        </div>
+        <!-- /.expandable-sn -->
+      </form>
+      <!-- /.form-modify -->
+    </div>
+    <!-- /.detailed-quotation -->
+    <div class="actions footer-actions spacing-b">
+    <div class="grouped-btns lt">
+      <a class="btn next" routerLink="../profileDetails" >Next <i></i></a>
+      </div>
+      <div class="grouped-btns rt">
+        <a class="btn btn-secondary">Save updates</a>
+        <a class="btn btn-secondary off-readonly" (click)="showWarningModal(true)">Edit / Cancel</a>
+        <a class="btn btn-secondary on-readonly" routerLink="/quotationApplicant/general">Edit / Cancel</a>
+        <a class="btn btn-secondary">Copy</a>
+        <a class="btn btn-secondary"  (click)="showSubmitModal(true)">Submit</a>
+        <a class="btn btn-secondary disabled">Print Contract</a>
+      </div>
+      <!-- /.grouped-btns -->
+    </div>
+  </div>
+  <!-- /.create-sn -->
+</div>
+<!-- /.tab-body-con -->
+
+<div class="modal"
+  *ngIf="!!state.isWranModal">
+  <div class="modal-con modal-alert modal-warning">
+  <div class="msg">
+    <div class="msgtext">Warning!</div>
+
+    <div class="info">This application has not been saved yet. Are you sure want to cancel this updates?</div>
+  </div>
+  <div class="action">
+    <a class="btn btn-warn " (click)="showWarningModal(false)">Cancel</a>
+    <a class="btn btn-warn btn-secondary" routerLink="../history">OK, Leave this</a>
+  </div>
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+
+
+<div class="modal"
+  *ngIf="!!state.isSubmitModal">
+  <div class="modal-con modal-alert modal-pre-approval">
+
+ <div class="msg">
+ <figure class="fig"><i class="success"></i></figure>
+ <h2>Application Submitted</h2>
+ <div class="text">Successfully submit this application!!</div>
+ </div>
+
+    
+   
+    <div class="actions centered">
+      <a class="btn btn-secondary" (click)="showSubmitModal(false)" >OK</a>
+    </div>
+    <!-- /.actions -->
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+<!-- /.submitModal -->

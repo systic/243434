@@ -1,0 +1,21 @@
+<div class="custom-sel {{childClass}}"
+[class.open]="!!isOpen"
+(mouseleave) = "isOpen=false"
+>
+  <a  class="select-val"
+  *ngIf="!!val"
+  (click)="toggle(isOpen)"
+  >{{prefix}} {{val}}</a>
+  <a  class="select-val placeholder"
+  *ngIf="!val"
+  (click)="toggle(isOpen)"
+  >{{placeholder}}</a>
+  <ul class="list">
+    <li *ngFor="let item of list"
+    [class.active] = "item.value===this.val"
+    (click)="selectItem(item)"
+    ><span>{{item.value}}</span></li>
+  </ul>
+  <!-- /.list -->
+</div>
+<!-- /.custom-sel -->

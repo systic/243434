@@ -1,0 +1,45 @@
+<nav class="navbar">
+  <div class="viewport">
+    <h1 class="logo">
+      <a routerLink="/dashboard">GM Financial</a>
+    </h1>
+    <ul class="navbar-nav">
+      <li><a class="nav-dash" routerLink="/dashboard" 
+      [class.active]="activenav==='dashboard'"
+      >My Dashboard</a></li>
+      <li><a class="nav-create" routerLink="/quotation"
+      [class.active]="activenav==='create-quotation'"
+      >create quotation</a></li>
+    </ul>
+    <!-- /.navbar-nav -->
+    <div class="rt">
+      <div class="search-gr">
+        <a class="lnk-search"></a>
+      </div>
+      <!-- /.search-gr -->
+      <div class="location header-gr">
+        <a  class="h dealer">{{db.delarName}}</a>
+        <small class="loc">{{db.dealarLoc}}</small>
+      </div>
+      <!-- /.location -->
+      <div class="user-area header-gr"
+      [class.open]="!!userMenuOpen"
+      (mouseleave)="userMenuOpen=false"
+      >
+      <a 
+       (click) = "toggleMenu()"
+        class="masked-link"></a>
+       <a  class="h el">{{db.logger.name}}</a>
+       <small class="el">{{db.logger.role}}</small>
+
+       <ul class="user-menu">
+         <li><a><span class="help">HELP</span></a></li>
+         <li><a routerLink="/contact" ><span class="mail">CONTACT</span></a></li>
+         <li><a><span class="logout">LOG OUT</span></a></li>
+       </ul>
+      </div>
+      <!-- /.user-area -->
+    </div>
+  </div>
+</nav>
+<!-- /.navbar -->

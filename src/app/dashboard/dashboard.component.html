@@ -1,0 +1,204 @@
+<app-main-head [activenav]="'dashboard'"></app-main-head>
+<div class="master-head">
+  <header class="header">
+    <div class="headings">
+      <h2>Application Status</h2>
+      <div class="meta">Project Overview</div>
+    </div>
+    <div class="datepicker-bar">
+      <a class="lbl datepicker-wrap"
+      (click) = "setDateType('date')"
+      [class.active] = "state.datepickerType === 'date'"
+      >Date <input type="text" class="datepicker-link"></a>
+      <a class="lbl "
+      (click) = "setDateType('week')"
+      [class.active] = "state.datepickerType === 'week'"
+      >This week</a>
+      <a class="lbl"
+      (click) = "setDateType('month')"
+      [class.active] = "state.datepickerType === 'month'"
+      >This Month</a>    
+    </div>
+    <!-- /.datepicker-bar -->
+
+    
+  </header>
+  <!-- /.header -->
+  <div class="chart-panel">
+    <div class="total-apps">
+      <h2 class="count">{{db.dash.totalApps}}</h2>
+      <div class="meta">TOTAL APPLICATIONS</div>
+      <div class="change">
+        <span class="val up"
+        [class.down]="db.dash.changeBy < 0"
+        [class.up]="db.dash.changeBy >= 0"
+        >{{db.dash.changeBy}}%</span> than last week</div>
+      </div>
+      <!-- /.total-apps -->
+      <div class="proposal-chart">
+        <div class="legend">
+          <div class="rw" 
+          *ngFor="let item of curChartLabelLt">
+          <span class="v">{{item.label}}</span>
+          <i class="{{item.label}}"
+          [style.background]="item.color"
+          >{{item.value}}</i>
+        </div>
+      </div>
+      <!-- /.legend -->
+      <figure class="proposal-chart-fig chart" >
+        <div id="proposal-chart">
+        <svg class="svg"></svg></div>
+        <div class="main-lbl">
+          <div class="count">{{db.dash.proposalCount}}</div>
+          <div class="tag">Proposals</div>
+        </div>
+      </figure>
+
+      <div class="legend rt">
+        <div class="rw" 
+        *ngFor="let item of curChartLabelRt">
+        <i class="{{item.label}}"
+        [style.background]="item.color"
+        >{{item.value}}</i>
+        <span class="v">{{item.label}}</span>
+      </div>
+    </div>
+    <!-- /.legend -->
+
+  </div>
+  <!-- /.proposal-chart -->
+</div>
+<!-- /.chart-panel -->
+</div>
+<!-- /.master-head -->
+
+<div class="dealer-work">
+  <header class="header">
+    <div class="headings">
+      <h2>Dealer Work Queue</h2>
+      <div class="meta">Your Searches application records.</div>
+    </div>
+    <div class="search-bar">
+    <div class="select-wrap">
+      <app-select 
+      [isOpen]="false"
+      [list]="searchList"
+      [placeholder]= "'Search by Customer'"
+      [(val)] = "searchType"
+      [default] = "'Customer Name'"
+      [prefix] = "'Search by '"
+      ></app-select>
+    </div>
+      <div class="input-wrap">
+        <app-autocomplete
+        [list]="autoSuggestList"
+        [placeholder]= "'Search by Customer'"
+        [(val)] = "searchText"
+
+        *ngIf="autoSuggestList.length>0"
+        ></app-autocomplete>
+      </div>
+      <!-- /.input-wrap -->
+      
+    </div>
+    <!-- /.search-bar -->
+  </header>
+  <!-- /.header -->
+
+  <div class="table-container">
+    <table class="datatable">
+      <tr>
+        <th><a>Application ID <i></i></a></th>
+        <th><a>Client Name <i></i></a></th>
+        <th><a>Sales Person <i></i></a></th>
+        <th><a (click)="toggleSortOpts()" >Dealer Site <i></i></a>
+          <div class="sort-opts" 
+          [class.open]="hasTableOpts"
+          >
+            <div class="inner">
+            <div class="gr-t">
+              <a>Sort sheet A - Z</a>
+              <a>Sort sheet Z - A</a>
+              <a>Randomize range</a>
+            </div>
+
+            <ul class="item-list">
+              <li 
+              *ngFor="let item of db.delarSiteOpts"
+              [class.root]= "item.isAll"
+              ><a class="chk"
+              (click) = "toggleChk(item, db.delarSiteOpts)"
+              [class.checked] = "item.isChecked"
+              >{{item.name}}</a></li>
+            </ul>
+            </div>
+            <div class="action-bar">
+              <a class="btn btn-secondary" (click)="closeSortOpts()">Cancel</a>
+              <a class="btn" (click)="closeSortOpts()">OK</a>
+            </div>
+            <!-- /.action-bar -->
+          </div>
+
+
+        </th>
+        <th><a>$ Loan <i></i></a></th>
+        <th><a>Term <i></i></a></th>
+        <th><a>Vehicle <i></i></a></th>
+        <th><a>Last Update <i></i></a></th>
+        <th><a>Stage Process <i></i></a></th>
+      </tr>
+      <tr *ngFor="let item of getSearchList(db.delarWorkQueue, searchText, searchType)">
+        <td><span><a routerLink="/viewApplication">{{item.applicationId}}</a></span></td>
+        <td><span>{{item.clientName}}</span></td>
+        <td><span>{{item.salesPerson}}</span></td>
+        <td><span>{{item.delarSite}}</span></td>   
+        <td><span>{{item.loan}}</span></td>
+        <td><span>{{item.term}}</span></td>
+        <td><span>{{item.vehicle}}</span></td>
+        <td><span>{{item.lastUpdate}}</span></td>
+        <td><span>{{item.stageProcess}} <a *ngIf="!!item.hasAlert" class="alert"
+        (click) = "showAlert()" ></a></span> </td>
+      </tr>
+    </table>
+  </div>
+  <!-- /.table-container -->
+  <div class="pagination-row">
+    <div class="lt">Showing <strong>1 - 10</strong> from <strong>289</strong> Applications</div>
+    <div class="rt">
+      <ul>
+        <li class="active">1</li>
+        <li>2</li>
+        <li class="next"></li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.pagination-row -->
+</div>
+<!-- /.dealer-work -->
+
+<div class="modal"
+*ngIf="!!db.alertModal && alertModalOpen">
+  <div class="modal-con modal-alert">
+    <h2>{{db.alertModal.itemId}}</h2>
+    <p>{{db.alertModal.details1}}</p>
+    <div class="toggle-sn">
+      <h3>Comments</h3>
+      <p class="comment">{{db.alertModal.comments}}</p>
+    </div>
+    <!-- /.toggle-sn -->
+    <div class="toggle-sn">
+      <h3>Id Verification</h3>
+      <ul class="list">
+        <li><span class="id">{{db.alertModal.idVerification.id}}</span> <a class="status">Upload <input type="file" class="input-upload"/></a></li>
+      </ul>
+    </div>
+    <div class="actions">
+      <a class="btn btn-secondary" (click) = "hideAlert()" >Cancel</a>
+      <a class="btn" (click) = "hideAlert()" >OK</a>
+    </div>
+    <!-- /.actions -->
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+

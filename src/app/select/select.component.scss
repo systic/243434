@@ -1,0 +1,81 @@
+@import "../../styles/constants";
+
+// app-select
+.custom-sel{
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  position: relative;
+  padding: 0 10px;
+  border-right: solid 1px #e6e6e6;
+  &:after{
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -3px;
+    width: 12px;
+    height: 5px;
+    background: url("../../assets/i/sel-arrow.svg") 0 0 no-repeat;
+    background-size: 8px 5px;
+  }
+  .select-val{
+    height: 40px;
+    display: block;
+  line-height: 40px;
+  color: $gray;
+  font-size: 13px;
+  }
+  .list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+    z-index: 10;
+     border-radius: 4px;
+     background-color: #ffffff;
+     box-shadow: 0 2px 10px 4px rgba(0, 0, 0, 0.12);
+     display: none;
+
+
+
+    li{
+      display: block;
+      line-height: 40px;
+      padding: 0 13px;
+      font-size: 13px;
+      color: $gray;
+      cursor: pointer;
+      &:hover{
+        background-color: #226ac3;
+        color: #fff;
+      }
+      span{
+        display: inline-block;
+        padding-right: 18px;
+        font-size: 14px;
+      }
+      &.active{
+        color: #226ac3;
+        span{
+          background: url('../../assets/i/sel-tick.svg') 100% 50% no-repeat;
+        } 
+        &:hover{
+          background: #fff;
+        }
+      }
+    }
+  }
+
+  //open
+  &.open{
+    .list{
+      display: block;
+    }
+  }
+}
+
+.select-ctrl{
+  border: none;
+  border-bottom: solid 1px #5a6a76;
+}

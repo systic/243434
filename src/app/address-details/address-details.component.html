@@ -1,0 +1,373 @@
+<app-applicant-nav [activeNav] = "'addressDetails'"></app-applicant-nav>
+
+<div class="tab-body-con">
+  <div class="modify-sn" *ngIf="!!state.dataLoaded && !!state.lookupLoaded">
+    <div class="detailed-quotation liquid">
+      <form class="form-modify">
+
+      <div class="expandable-sn">
+              <header>
+                <h3><a class="toggle-handle arrow"></a> <span>Current Address</span></h3>
+              </header>
+              <div class="wrapper-expcon">
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Street</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="street" [(ngModel)]="cAddr.street" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Ext</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="ext" [(ngModel)]="cAddr.ext" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Int</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="int" [(ngModel)]="cAddr.int" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Neighborhood</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="neighborhood" [(ngModel)]="cAddr.neighborhood" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>State</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.state"
+                          [placeholder]= "''"
+                          [(val)] = "cAddr.state"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6><span>Town Name</span></h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.town"
+                          [placeholder]= "''"
+                          [(val)] = "cAddr.townName"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>City</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="taxId" [(ngModel)]="cAddr.city" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Postal Code</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="taxId" [(ngModel)]="cAddr.postalCode" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Residence Type</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.residenceType"
+                          [placeholder]= "''"
+                          [(val)] = "cAddr.residenceType"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Permanence Years</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="permanenceYears" [(ngModel)]="cAddr.permanenceYears" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Permanence Months</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="permanenceMonths" [(ngModel)]="cAddr.permanenceMonths" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Monthly Payment</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="monthlyPayment" [(ngModel)]="cAddr.monthlyPayment" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Value</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="value" [(ngModel)]="cAddr.value" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Telephone Area Code</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="Telephone Area Code" [(ngModel)]="cAddr.telephoneAreaCode" />
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6 class="has-alert">Telephone</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="telephone" [(ngModel)]="cAddr.telephone" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Cellphone code</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="cellphoneCode" [(ngModel)]="cAddr.cellphoneCode" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Cellphone</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="cellphone" [(ngModel)]="cAddr.cellphone" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col"></div>
+                  <div class="col"></div>
+                  <div class="col"></div>
+                </div>
+                <!-- /.con-sn -->
+              </div>
+              <!-- /.wrapper-expcon -->
+      </div>
+        <!-- /.expandable-sn -->
+
+      <div class="expandable-sn  spacing-t">
+              <header>
+                <h3><a class="toggle-handle arrow"></a> <span>Previous Address</span></h3>
+              </header>
+              <div class="wrapper-expcon">
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Street</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="street" [(ngModel)]="prevAddr.street" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>External number</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="ext" [(ngModel)]="prevAddr.ext" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Internal number</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="int" [(ngModel)]="prevAddr.int" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Postal Code</h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="postalCode" [(ngModel)]="prevAddr.postalCode" />
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6>State</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.state"
+                          [placeholder]= "''"
+                          [(val)] = "prevAddr.state"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="gr">
+                      <h6>City</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.town"
+                          [placeholder]= "''"
+                          [(val)] = "prevAddr.city"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="gr">
+                      <h6>Neighborhood</h6>
+                      <div class="val">
+                        <app-select [childClass]="'select-ctrl'"
+                          [isOpen]="false"
+                          [list]="lookup.town"
+                          [placeholder]= "''"
+                          [(val)] = "prevAddr.neighborhood"
+                          [default] = "''"
+                          [prefix] = "''"
+                        ></app-select>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col">
+                    <div class="gr">
+                      <h6><span>Seniority  - Years</span></h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="seniorityYears" [(ngModel)]="prevAddr.seniorityYears" />
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.con-sn -->
+                <div class="con-sn">
+                  <div class="col">
+                    <div class="gr">
+                      <h6><span>Seniority  - Months</span></h6>
+                      <div class="val">
+                        <input type="text" class="input-ctrl"  name="seniorityMonths" [(ngModel)]="prevAddr.seniorityMonths" />
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col"></div>
+                  <div class="col"></div>
+                  <div class="col"></div>
+                </div>
+                <!-- /.con-sn -->
+              </div>
+              <!-- /.wrapper-expcon -->
+      </div>
+        <!-- /.expandable-sn -->
+      
+      </form>
+      <!-- /.form-modify -->
+    </div>
+    <!-- /.detailed-quotation -->
+    <div class="actions footer-actions spacing-b">
+      <div class="grouped-btns lt">
+      <a class="btn prev" routerLink="../profileDetails" >Previous <i></i></a>
+      <a class="btn next" routerLink="../workDetails" >Next <i></i></a>
+      </div>
+      <div class="grouped-btns rt">
+        <a class="btn btn-secondary">Save updates</a>
+        <a class="btn btn-secondary off-readonly" (click)="showWarningModal(true)">Edit / Cancel</a>
+        <a class="btn btn-secondary on-readonly" routerLink="/quotationApplicant/general">Edit / Cancel</a>
+        <a class="btn btn-secondary">Copy</a>
+        <a class="btn btn-secondary"  (click)="showSubmitModal(true)">Submit</a>
+        <a class="btn btn-secondary disabled">Print Contract</a>
+      </div>
+      <!-- /.grouped-btns -->
+    </div>
+  </div>
+  <!-- /.create-sn -->
+</div>
+<!-- /.tab-body-con -->
+
+<div class="modal"
+  *ngIf="!!state.isWranModal">
+  <div class="modal-con modal-alert modal-warning">
+  <div class="msg">
+    <div class="msgtext">Warning!</div>
+
+    <div class="info">This application has not been saved yet. Are you sure want to cancel this updates?</div>
+  </div>
+  <div class="action">
+    <a class="btn btn-warn " (click)="showWarningModal(false)">Cancel</a>
+    <a class="btn btn-warn btn-secondary" routerLink="../history">OK, Leave this</a>
+  </div>
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+
+
+<div class="modal"
+  *ngIf="!!state.isSubmitModal">
+  <div class="modal-con modal-alert modal-pre-approval">
+
+ <div class="msg">
+ <figure class="fig"><i class="success"></i></figure>
+ <h2>Application Submitted</h2>
+ <div class="text">Successfully submit this application!!</div>
+ </div>
+
+    
+   
+    <div class="actions centered">
+      <a class="btn btn-secondary" (click)="showSubmitModal(false)" >OK</a>
+    </div>
+    <!-- /.actions -->
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+<!-- /.submitModal -->

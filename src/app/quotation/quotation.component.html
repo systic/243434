@@ -1,0 +1,183 @@
+<app-main-head [activenav]="'create-quotation'"></app-main-head>
+<main class="main main-quotation wider">
+  <header class="header-page tall">
+    <div class="breadcrumb">
+      <a routerLink="/dashboard" class="back-link">Cancel Creating Quotation</a>
+    </div>
+    <h3 *ngIf="activeStep===1" >01. Vehicle selection</h3>
+    <h3 *ngIf="activeStep===2" >02. Select Plan Proposal</h3>
+  </header>
+  <!-- /.header-sn -->
+  <div class="create-sn"
+  *ngIf="!!state.dataLoaded && !!state.lookupLoaded"
+  >
+    <div class="bar-new-used"
+    *ngIf="activeStep===1"
+    >
+      <div class="gr">
+        <a class="opt" [class.active]="quote.vSel1.newUsed==='New'"
+        (click)="quote.vSel1.newUsed='New'"
+        >New</a>
+        <a class="opt" [class.active]="quote.vSel1.newUsed==='Used'"
+        (click)="quote.vSel1.newUsed='Used'"
+        >Used</a>
+      </div>
+    </div>
+    <!-- /.bar-new-used -->
+    <div *ngIf="activeStep===1" id="step1" class="presentation">
+      <figure class="showcase">
+        <img src="../../assets/i/car-grayed@2x.jpg" alt=""
+        *ngIf="!isSetp1FormIncomplete()"
+        >
+        <img src="../../assets/i/car-a.jpg" alt=""
+        *ngIf="!!isSetp1FormIncomplete()"
+        >
+        <div class="fig-caption"
+        *ngIf="!isSetp1FormIncomplete()">
+          <h4>Choose a Car</h4>
+          <div class="d">Models may differ from images shown</div>
+        </div>
+        <div class="fig-caption"
+        *ngIf="!!isSetp1FormIncomplete()">
+          <h4 class="alt">{{quote.vSel1.carManufacturer}} {{quote.vSel1.carModel}} <span>${{quote.vSel1.price}}</span></h4>
+        </div>
+      </figure>
+      <!-- /.showcase -->
+      <form class="form step1"
+      >
+        <div class="fieldset">
+          <label class="entity" for="ct">Car Type <span class="required">*</span></label>
+          <div class="val">
+            <app-select [childClass]="'select-ctrl'"
+            [isOpen]="false"
+            [list]="lookup.carType"
+            [placeholder]= "''"
+            [(val)] = "quote.vSel1.carType"
+            [default] = "''"
+            [prefix] = "''"
+            ></app-select>
+          </div>
+        </div>
+        <div class="fieldset">
+          <label class="entity" for="ct">Choose manufacturer <span class="required">*</span></label>
+          <div class="val">
+            <app-select [childClass]="'select-ctrl'"
+            [isOpen]="false"
+            [list]="lookup.carManufacturer"
+            [placeholder]= "''"
+            [(val)] = "quote.vSel1.carManufacturer"
+            [default] = "''"
+            [prefix] = "''"
+            ></app-select>
+          </div>
+        </div>
+        <div class="fieldset">
+          <label class="entity" for="ct">Choose a model <span class="required">*</span></label>
+          <div class="val">
+            <app-select [childClass]="'select-ctrl'"
+            [isOpen]="false"
+            [list]="lookup.carModel"
+            [placeholder]= "''"
+            [(val)] = "quote.vSel1.carModel"
+            [default] = "''"
+            [prefix] = "''"
+            ></app-select>
+          </div>
+        </div>
+        <div class="fieldset">
+          <label class="entity" for="ct">Choose a variant <span class="required">*</span></label>
+          <div class="val">
+            <app-select [childClass]="'select-ctrl'"
+            [isOpen]="false"
+            [list]="lookup.carVarient"
+            [placeholder]= "''"
+            [(val)] = "quote.vSel1.carVarient"
+            [default] = "''"
+            [prefix] = "''"
+            ></app-select>
+          </div>
+        </div>
+        <div class="fieldset">
+          <label class="entity" for="ct">Vehicle Price ($) <span class="required">*</span></label>
+          <div class="val">
+            <input type="text" class="input-ctrl" name="price" [(ngModel)] = "quote.vSel1.price" />
+          </div>
+        </div>
+      </form>
+      <!-- /.form -->
+      <div class="clear"></div>
+    </div>
+    <!-- /.presentation #step1 -->
+
+
+    <div *ngIf="activeStep===2" id="step2" class="presentation">
+      <figure class="showcase alt">
+        <img src="../../assets/i/car-a.jpg" alt="" />
+        <div class="fig-caption">
+          <h4 class="alt">{{quote.vSel1.carManufacturer || 'Chevrolet'}} {{quote.vSel1.carModel || 'Cruze'}} <span>${{quote.vSel1.price || '20,750.00'}}</span></h4>
+        </div>
+      </figure>
+      <!-- /.showcase -->
+      <form class="form step2"
+      >
+        <div class="available-plans">
+          <div class="plan-bar"
+          *ngFor="let item of quote.vSel2.plans"
+          [class.active]="item.type === quote.vSel2.currentPlan.type"
+          [class.active]="item.type === quote.vSel2.currentPlan.type"
+          (click)="quote.vSel2.currentPlan = item"
+          >
+            <div class="gr type-gr">
+              <a class="type"
+              [class.active]="item.type === quote.vSel2.currentPlan.type"
+              >{{item.type}}</a>
+            </div>
+            <div class="gr deposit">
+            <div class="inner">
+              <h6>Total Deposit</h6>
+              <div class="val">{{item.totalDeposit}}</div>
+              </div>
+            </div>
+            <div class="gr payment">
+            <div class="inner">
+              <h6>Monthly Payment</h6>
+              <div class="val"><small class="dollar">$</small>{{item.monthlyPayment}}</div>
+              </div>
+            </div>
+            <div class="gr term">
+            <div class="inner">
+              <h6>TERM</h6>
+              <div class="val">{{item.term}} <small class="md">MD</small></div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <!-- /.plan-bar -->
+        </div>
+        <!-- /.available-plans -->
+      </form>
+      <!-- /.form -->
+      <div class="clear"></div>
+    </div>
+    <!-- /.presentation #step2 -->
+
+
+      <div class="actions">
+        <a class="btn btn-disabled prev"
+        (click) = "goToStep(activeStep-1)"
+        [class.btn-disabled]="activeStep<=1"
+        >Previous <i></i></a>
+        <a router class="btn btn-safe next"
+        (click) = "goToStep(activeStep+1)"
+        [class.btn-disabled]="activeStep>=3"
+        *ngIf="activeStep<2"
+        >Next <i></i></a>
+        <a router routerLink="/quotation-modify" class="btn btn-safe next"
+        [class.btn-disabled]="activeStep>=3"
+        *ngIf="activeStep>=2"
+        >Next <i></i></a>
+      </div>
+  </div>
+  <!-- /.create-sn -->
+</main>
+<!-- /.main -->

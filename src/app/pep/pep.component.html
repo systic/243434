@@ -1,0 +1,272 @@
+<app-applicant-nav [activeNav] = "'pep'"></app-applicant-nav>
+
+<div class="tab-body-con">
+  <div class="modify-sn" *ngIf="!!state.dataLoaded && !!state.lookupLoaded">
+    <div class="detailed-quotation liquid">
+      <form class="form-modify">
+
+      <div class="expandable-sn">
+        <header>
+          <h3><a class="toggle-handle arrow toggle-disabled"></a> <span>PEP</span></h3>
+        </header>
+        <div class="wrapper-expcon wrapper-pep">
+          <div class="con-sn">
+            <div class="col col-3-4">
+              <div class="que">Mention if the vehicle will be used mainly by another company or a third person (different to the applicant and/or co-solicitante) (owner Real). "If so, please provide the following information:"</div>
+            </div>
+            <div class="col">
+              <div class="new-old">
+                <a class="new-el radio-ctrl" 
+                [class.checked]="!!pep.qa.a1"
+                (click) = "pep.qa.a1=true"
+                >Yes</a>
+                <a class="new-el radio-ctrl" 
+                [class.checked]="!pep.qa.a1"
+                (click) = "pep.qa.a1=false"
+                >No</a>
+                <div class="val has-add">
+                  <a class="add"></a>
+                </div>
+              </div>
+              <!-- /.new-old -->
+            </div>
+          </div>
+          <!-- /.con-sn -->
+          <div class="con-sn">
+            <div class="col col-3-4">
+              <div class="que">Does the pure credit/leasing will be liquidated with lawful resources of the company representing (provider resources)
+              <div><i>If not, please provide the following information:</i></div></div>
+            </div>
+            <div class="col">
+              <div class="new-old">
+                <a class="new-el radio-ctrl" 
+                [class.checked]="!!pep.qa.a2"
+                (click) = "pep.qa.a2=true"
+                >Yes</a>
+                <a class="new-el radio-ctrl" 
+                [class.checked]="!pep.qa.a2"
+                (click) = "pep.qa.a2=false"
+                >No</a>
+                <div class="val has-add">
+                  <a class="add"></a>
+                </div>
+              </div>
+              <!-- /.new-old -->
+            </div>
+          </div>
+          <!-- /.con-sn -->
+          <div class="con-sn">
+            <div class="col col-3-4">
+              <div class="que">Plays or has played functions public or activities political featured in territory national or in the foreigner?
+              <div><i>(See details in credit application)</i></div></div>
+            </div>
+            <div class="col">
+              <div class="new-old">
+                <a class="new-el radio-ctrl" 
+                [class.checked]="!!pep.qa.a3"
+                (click) = "pep.qa.a3=true"
+                >Yes</a>
+                <a class="new-el radio-ctrl" 
+                [class.checked]="!pep.qa.a3"
+                (click) = "pep.qa.a3=false"
+                >No</a>
+              </div>
+              <!-- /.new-old -->
+            </div>
+          </div>
+          <!-- /.con-sn -->
+          <div class="con-sn">
+            <div class="col col-3-4">
+              <div class="que">Detail title and date from which the raising or let it play</div>
+            </div>
+            <div class="col">
+              <input type="text" class="input-ctrl"  name="detailTitle" [(ngModel)]="pep.detailTitle" />
+            </div>
+          </div>
+          <!-- /.con-sn -->
+          <div class="con-sn">
+            <div class="col col-3-4">
+              <div class="que">Have you some family by consanguinidade or affinity that plays or has played functions public or activities political outstanding in territory national or in the overseas?
+              <i>(See details in credit application)</i></div>
+            </div>
+            <div class="col">
+              <div class="new-old">
+                <a class="new-el radio-ctrl" 
+                [class.checked]="!!pep.qa.a4"
+                (click) = "pep.qa.a4=true"
+                >Yes</a>
+                <a class="new-el radio-ctrl" 
+                [class.checked]="!pep.qa.a4"
+                (click) = "pep.qa.a4=false"
+                >No</a>
+              </div>
+              <!-- /.new-old -->
+            </div>
+          </div>
+          <!-- /.con-sn -->
+
+          <div class="con-sn spacing-t pep-con-sn">
+            <div class="col">
+              <div class="gr">
+                <h6>Relative Name</h6>
+                <div class="val">
+                  <input type="text" class="input-ctrl"  name="relative-name" [(ngModel)]="pep.relName" />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="gr">
+                <h6>Relationship</h6>
+                <div class="val">
+                  <input type="text" class="input-ctrl"  name="relationship" [(ngModel)]="pep.relationship" />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="gr">
+                <h6>Occupation</h6>
+                <div class="val">
+                  <input type="text" class="input-ctrl"  name="occupation" [(ngModel)]="pep.occupation" />
+                </div>
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+          <!-- /.con-sn -->
+
+          <div class="con-sn pep-con-sn alt">
+            <div class="col col-3-4">
+              <div class="que">Indicate if you have authorization to reside in Mexico</div>
+            </div>
+            <div class="col">
+              <a class="chk-ctrl" 
+              [class.checked]="pep.isResideInMexico"
+              (click) = "pep.isResideInMexico=!!pep.isResideInMexico?false:true"
+              ></a>
+            </div>
+          </div>
+          <!-- /.con-sn -->
+
+
+          <div class="con-sn spacing-t pep-con-sn">
+            <div class="col">
+              <div class="gr">
+                <h6>Foreign Address Street and number</h6>
+                <div class="val">
+                  <input type="text" class="input-ctrl"  name="addr" [(ngModel)]="pep.addr" />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="gr">
+                <h6>Phone</h6>
+                <div class="val">
+                  <input type="text" class="input-ctrl"  name="pho" [(ngModel)]="pep.pho" />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="gr">
+                <h6>Neighborhood</h6>
+                <div class="val">
+                  <input type="text" class="input-ctrl"  name="nei" [(ngModel)]="pep.nei" />
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="gr">
+                <h6>City</h6>
+                <div class="val">
+                  <input type="text" class="input-ctrl"  name="nei" [(ngModel)]="pep.city" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.con-sn -->
+          <div class="con-sn spacing-t pep-con-sn ">
+            <div class="col">
+              <div class="gr">
+                <h6>Country</h6>
+                <div class="val">
+                <app-select [childClass]="'select-ctrl'"
+                  [isOpen]="false"
+                  [list]="lookup.country"
+                  [placeholder]= "''"
+                  [(val)] = "pep.country"
+                  [default] = "''"
+                  [prefix] = "''"
+                ></app-select>
+                </div>
+              </div>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+          <!-- /.con-sn -->
+        </div>
+        <!-- /.wrapper-expcon -->
+      </div>
+      <!-- /.expandable-sn -->
+      
+      </form>
+      <!-- /.form-modify -->
+    </div>
+    <!-- /.detailed-quotation -->
+    <div class="actions footer-actions spacing-b">
+      <div class="grouped-btns lt">
+      <a class="btn prev" routerLink="../personalPref" >Previous <i></i></a>
+      <a class="btn next" routerLink="../doc" >Next <i></i></a>
+      </div>
+      <div class="grouped-btns rt">
+        <a class="btn btn-secondary">Save updates</a>
+        <a class="btn btn-secondary off-readonly" (click)="showWarningModal(true)">Edit / Cancel</a>
+        <a class="btn btn-secondary on-readonly" routerLink="/quotationApplicant/general">Edit / Cancel</a>
+        <a class="btn btn-secondary">Copy</a>
+        <a class="btn btn-secondary"  (click)="showSubmitModal(true)">Submit</a>
+        <a class="btn btn-secondary disabled">Print Contract</a>
+      </div>
+      <!-- /.grouped-btns -->
+    </div>
+  </div>
+  <!-- /.create-sn -->
+</div>
+<!-- /.tab-body-con -->
+
+<div class="modal"
+  *ngIf="!!state.isWranModal">
+  <div class="modal-con modal-alert modal-warning">
+  <div class="msg">
+    <div class="msgtext">Warning!</div>
+
+    <div class="info">This application has not been saved yet. Are you sure want to cancel this updates?</div>
+  </div>
+  <div class="action">
+    <a class="btn btn-warn " (click)="showWarningModal(false)">Cancel</a>
+    <a class="btn btn-warn btn-secondary" routerLink="../history">OK, Leave this</a>
+  </div>
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+
+
+<div class="modal"
+  *ngIf="!!state.isSubmitModal">
+  <div class="modal-con modal-alert modal-pre-approval">
+
+ <div class="msg">
+ <figure class="fig"><i class="success"></i></figure>
+ <h2>Application Submitted</h2>
+ <div class="text">Successfully submit this application!!</div>
+ </div>
+
+    
+   
+    <div class="actions centered">
+      <a class="btn btn-secondary" (click)="showSubmitModal(false)" >OK</a>
+    </div>
+    <!-- /.actions -->
+  </div>
+  <!-- /.modal-con modal-alert -->
+</div>
+<!-- /.submitModal -->

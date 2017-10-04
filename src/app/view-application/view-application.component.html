@@ -1,0 +1,42 @@
+<app-main-head></app-main-head>
+<main class="main main-quotation fluid">
+  <header class="header-soft">
+  <div class="viewport">
+  <div class="top-view">
+  <div class="lt">
+    <h3><a>{{qApplicant.name}}</a></h3>
+    </div>
+
+    <div class="rt align-right">
+      <h5><a>Application ID {{qApplicant.applicationId}}</a></h5>
+      <h6 class="status"><a>Status: {{qApplicant.status}}</a></h6>
+    </div>
+    <div class="clear"></div>
+    </div>
+      <!-- /.top-view -->
+    <div class="basic-details">{{qApplicant.basicDetails}} 
+    <span class="more-details" *ngIf="!!state.moreDetails">{{qApplicant.moreDetails}}</span> <a class="more" 
+    [class.less]="!!state.moreDetails"
+    (click)="state.moreDetails = !!state.moreDetails?false:true;">
+    
+    <span *ngIf="!state.moreDetails">More</span><span *ngIf="!!state.moreDetails">Less</span> details</a></div>
+    </div>
+  </header>
+  <!-- /.header-soft -->
+
+  <div class="router-con read-only">
+    <div class="viewport">
+      <div class="root-tabs">
+        <div class="tab-group">
+          <a class="tab-nav applicant active"><span class="i"><i></i>Applicant</span></a>
+          <a class="tab-nav co-applicant"><span class="i"><i></i>Co-Applicant</span></a>
+          <a class="tab-nav guarantor"><span class="i"><i></i>Guarantor</span></a>
+        </div>
+      </div>
+      <!-- /.root-tabs -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- /.router-con -->
+</main>
+<!-- /.main -->
